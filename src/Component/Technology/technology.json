@@ -1,0 +1,69 @@
+{
+  "technologies": [
+    {
+      "name": "HTML/HTML5",
+      "icon": "FaHtml5",
+      "color": "text-orange-600"
+    },
+    {
+      "name": "CSS/CSS3",
+      "icon": "FaCss3Alt",
+      "color": "text-blue-600"
+    },
+    {
+      "name": "Next.js",
+      "icon": "SiNextdotjs",
+      "color": "text-black"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "SiTailwindcss",
+      "color": "text-blue-500"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "FaBootstrap",
+      "color": "text-purple-600"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "FaJs",
+      "color": "text-yellow-500"
+    },
+    {
+      "name": "React.js",
+      "icon": "FaReact",
+      "color": "text-blue-400"
+    },
+    {
+      "name": "Git",
+      "icon": "FaGitAlt",
+      "color": "text-orange-500"
+    },
+    {
+      "name": "GitHub",
+      "icon": "FaGithub",
+      "color": "text-black"
+    },
+    {
+      "name": "Material UI",
+      "icon": "SiMui",
+      "color": "text-blue-600"
+    },
+    {
+      "name": "Bitbucket",
+      "icon": "FaBitbucket",
+      "color": "text-blue-500"
+    },
+    {
+      "name": "Blockchain",
+      "icon": "SiHiveBlockchain",
+      "color": "text-green-600"
+    },
+    {
+      "name": "Solidity",
+      "icon": "SiSolidity",
+      "color": "text-gray-800"
+    }
+  ]
+}

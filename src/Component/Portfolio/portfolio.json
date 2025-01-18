@@ -1,0 +1,219 @@
+[
+  {
+    "id": "1",
+    "type": "client",
+    "name": "BIA Shop",
+    "image": "/project/bia_shop.png",
+    "demoUrl": "https://ohayosushi.quarkinfotech.com/",
+    "details": "An e-commerce platform designed to simplify shopping experiences.",
+    "codeUrl": "#",
+    "role": "Frontend Developer",
+    "description": "I was responsible for developing the user interface using React and integrating APIs for seamless data flow.",
+    "technicalDetails": [
+      "Built responsive UI components using React and Tailwind CSS",
+      "Implemented Redux for state management",
+      "Integrated RESTful APIs for product and order management",
+      "Implemented user authentication and authorization",
+      "Created dynamic product filtering and search functionality"
+    ],
+    "keyFeatures": [
+      "Responsive product catalog",
+      "Advanced search and filtering",
+      "Secure checkout process",
+      "Order tracking system",
+      "User account management"
+    ],
+    "challenges": [
+      "Optimizing performance for large product catalogs",
+      "Implementing real-time inventory updates",
+      "Creating a seamless checkout experience",
+      "Ensuring mobile responsiveness"
+    ]
+  },
+  {
+    "id": "2",
+    "type": "client",
+    "name": "BIA ( Bodhisattvas In Action)",
+    "image": "/project/bia.png",
+    "demoUrl": "https://bia.quarkinfotech.com/",
+    "details": "A business automation platform for efficient workflow management.",
+    "codeUrl": "#",
+    "role": "Frontend Developer",
+    "description": "I developed reusable components, optimized performance, and implemented responsive designs using Tailwind CSS.",
+    "technicalDetails": [
+      "Developed reusable React components using TypeScript",
+      "Implemented state management with React Context",
+      "Created custom hooks for business logic",
+      "Built responsive layouts using Tailwind CSS",
+      "Integrated with backend REST APIs"
+    ],
+    "keyFeatures": [
+      "Workflow automation",
+      "Task management",
+      "Document handling",
+      "Role-based access control",
+      "Real-time notifications"
+    ],
+    "challenges": [
+      "Managing complex state interactions",
+      "Optimizing component reusability",
+      "Implementing complex business logic",
+      "Ensuring consistent UI/UX"
+    ]
+  },
+  {
+    "id": "3",
+    "type": "client",
+    "name": "Korifi B2B",
+    "image": "/project/korifi.png",
+    "demoUrl": "https://korifib2b.com/",
+    "details": "A B2B marketplace connecting suppliers and buyers.",
+    "codeUrl": "#",
+    "role": "Frontend Developer",
+    "description": "Built dynamic UI components and collaborated with backend developers for smooth API integration.",
+    "technicalDetails": [
+      "Built dynamic forms using React Hook Form",
+      "Implemented data visualization with Recharts",
+      "Created reusable component library",
+      "Integrated with REST and GraphQL APIs",
+      "Implemented real-time features using WebSocket"
+    ],
+    "keyFeatures": [
+      "Product catalog management",
+      "Order processing system",
+      "Supplier management",
+      "Analytics dashboard",
+      "Inventory tracking"
+    ],
+    "challenges": [
+      "Handling complex data relationships",
+      "Optimizing large data sets",
+      "Implementing real-time updates",
+      "Creating intuitive user interfaces"
+    ]
+    },
+  {
+    "id": "4",
+    "type": "client",
+    "name": "Mandala AgriFresh",
+    "image": "/project/mandala.png",
+    "demoUrl": "https://www.mandalaagrifresh.com/",
+    "details": "A platform for promoting fresh produce and agribusiness solutions.",
+    "codeUrl": "#",
+    "role": "Frontend Developer",
+    "description": "Developed a responsive and visually appealing interface to showcase products effectively.",
+    "technicalDetails": [
+      "Developed responsive layouts with CSS Grid and Flexbox",
+      "Implemented image optimization and lazy loading",
+      "Created animations using Framer Motion",
+      "Built interactive product showcases",
+      "Integrated CMS for content management"
+    ],
+    "keyFeatures": [
+      "Product showcase",
+      "Contact management",
+      "Content management",
+      "Image gallery",
+      "Mobile-first design"
+    ],
+    "challenges": [
+      "Optimizing image loading performance",
+      "Creating smooth animations",
+      "Implementing responsive design",
+      "Managing dynamic content"
+    ]
+  },
+  {
+    "id": "5",
+    "type": "client",
+    "name": "Ohayo Sushi",
+    "image": "/project/ohayo.png",
+    "demoUrl": "https://ohayosushi.com.np/",
+    "details": "A sushi restaurant website with online ordering features.",
+    "codeUrl": "#",
+    "role": "Frontend Developer",
+    "description": "Implemented interactive menus, order forms, and animations to enhance user engagement.",
+    "technicalDetails": [
+      "Built interactive menu system",
+      "Implemented order processing workflow",
+      "Created custom animations",
+      "Integrated payment gateway",
+      "Developed cart management system"
+    ],
+    "keyFeatures": [
+      "Online ordering",
+      "Menu management",
+      "Order tracking",
+      "Payment integration",
+      "Real-time notifications"
+    ],
+    "challenges": [
+      "Creating intuitive ordering flow",
+      "Managing order states",
+      "Implementing payment processing",
+      "Ensuring order accuracy"
+    ]
+  },
+  {
+    "id": "6",
+    "type": "Personal",
+    "name": "Centralized Blockchain Based Banking Transactions using Digital Currency",
+    "image": "/project/cbbbtd.png",
+    "demoUrl": "#",
+    "details": "A blockchain-based system for centralized banking transactions.",
+    "codeUrl": "https://github.com/AmritBhusal/Centralized-Blockchain-Based-Banking-Transactions-using-Digital-Currency.git",
+    "role": "Fullstack Developer",
+    "description": "Developed a secure blockchain infrastructure and a user-friendly web interface for transactions.",
+    "technicalDetails": [
+      "Developed smart contracts using Solidity",
+      "Implemented blockchain network using Ethereum",
+      "Created Web3.js integration",
+      "Built secure transaction system",
+      "Developed user authentication system"
+    ],
+    "keyFeatures": [
+      "Secure transactions",
+      "Digital currency management",
+      "Transaction history",
+      "User wallet system",
+      "Administrative controls"
+    ],
+    "challenges": [
+      "Ensuring transaction security",
+      "Optimizing gas costs",
+      "Managing transaction states",
+      "Implementing proper error handling"
+    ]
+  },
+  {
+    "id": "7",
+    "type": "Personal",
+    "name": "Digital Certificate Verification System Using Blockchain",
+    "image": "/project/dcvs.png",
+    "demoUrl": "#",
+    "details": "A distributed version control system for efficient collaboration.",
+    "codeUrl": "https://github.com/AmritBhusal/DCVS.git",
+    "role": "Backend Developer",
+    "description": "Designed and implemented backend logic for managing distributed repositories.",
+    "technicalDetails": [
+      "Implemented smart contracts using Solidity",
+      "Used IPFS for decentralized certificate storage",
+      "Integrated Web3.js for blockchain interactions",
+      "Built secure verification mechanisms",
+      "Implemented certificate metadata management"
+    ],
+    "keyFeatures": [
+      "Secure certificate storage",
+      "Immutable blockchain records",
+      "Quick verification process",
+      "User-friendly interface",
+      "Decentralized file system"
+    ],
+    "challenges": [
+      "Optimizing gas costs for operations",
+      "Ensuring secure access control",
+      "Managing certificate metadata",
+      "Implementing verification logic"
+    ]
+  }
+]

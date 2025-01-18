@@ -1,0 +1,15 @@
+{
+  "greeting": "Hello,",
+  "name": "Amrit Bhusal",
+  "role": "an Frontend Developer",
+  "ctaHeading": "Need a Website? Let’s Build It Together!",
+  "ctaDescription": "I create modern, responsive websites using React, Next.js, HTML, and CSS.",
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/your-profile",
+    "instagram": "https://www.instagram.com/your-profile",
+    "whatsapp": "https://wa.me/your-number",
+    "linkedin": "https://www.linkedin.com/in/your-profile"
+  },
+  "resume": "/resume.pdf"
+
+}
