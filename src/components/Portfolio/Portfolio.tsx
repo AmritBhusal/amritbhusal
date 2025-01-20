@@ -8,9 +8,8 @@ import { BsGithub } from 'react-icons/bs';
 import Link from 'next/link';
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState('all'); // State to track the selected filter
+  const [filter, setFilter] = useState('all'); 
   
-  // Function to filter projects based on selected type
   const filteredProjects = filter === 'all' 
     ? portfolioData 
     : portfolioData.filter(project => project.type.toLowerCase() === filter.toLowerCase());
@@ -21,7 +20,6 @@ const Portfolio = () => {
                 <span className='font-bold text-3xl whitespace-nowrap text-center'>Portfolio</span>
             </div>
       <div className="flex flex-col items-center justify-center w-full gap-10">
-        {/* Navbar for project type selection */}
         <div className="flex flex-wrap gap-6 border-b p-8 w-full justify-center">
           {['all', 'client', 'personal'].map((type) => (
             <span 

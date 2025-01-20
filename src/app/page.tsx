@@ -1,7 +1,7 @@
-import About from '@/Component/About/About'
-import Intro from '@/Component/Intro/intro'
-import Portfolio from '@/Component/Portfolio/Portfolio'
-import Technology from '@/Component/Technology/Technology'
+import About from '@/components/About/About'
+import Intro from '@/components/Intro/intro'
+import Portfolio from '@/components/Portfolio/Portfolio'
+import Technology from '@/components/Technology/Technology'
 import React from 'react'
 
 
