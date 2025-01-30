@@ -12,7 +12,7 @@ const Intro = () => {
         <div className="flex flex-col items-start justify-start">
           <span className="font-medium text-md text-gray-400">{introData.greeting}</span>
           <span className="font-bold text-3xl">
-            I'm <span className="text-[#0e7cbe]">{introData.name}</span>
+            I am <span className="text-[#0e7cbe]">{introData.name}</span>
           </span>
           <span className="font-bold text-2xl">{introData.role}</span>
         </div>

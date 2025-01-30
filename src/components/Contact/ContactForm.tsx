@@ -88,10 +88,12 @@ export default function ContactForm() {
         form.reset()
         setTotalAmount(0)
       }
-    } catch (error) {
+    } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : "Failed to send message. Please try again."
+
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       })
     } finally {
@@ -110,7 +112,7 @@ export default function ContactForm() {
     <div className="w-full max-w-2xl mx-auto p-6 space-y-8">
       <div className="space-y-2 text-center">
         <h2 className="text-3xl font-bold">Contact Me</h2>
-        <p className="text-gray-500">Let's discuss your project requirements</p>
+        <p className="text-gray-500">Let us discuss your project requirements</p>
       </div>
 
       <Form {...form}>

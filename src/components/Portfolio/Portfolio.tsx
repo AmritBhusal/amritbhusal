@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Eye, SquareArrowOutUpRight } from 'lucide-react';
 import { BsGithub } from 'react-icons/bs';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all'); 
@@ -36,9 +37,11 @@ const Portfolio = () => {
           {filteredProjects.map((project) => (
             <div key={project.id} className="overflow-hidden shadow-custom rounded-lg">
               <div className="w-full min-h-[250px] max-h-[250px] overflow-hidden border bg-gray-200 rounded-t-lg group">
-                <img
+                <Image
                   src={project.image}
                   alt={project.name}
+                  width={500}
+                  height={250}
                   className="w-full h-auto"
                 />
               </div>

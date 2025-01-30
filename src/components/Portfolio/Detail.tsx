@@ -5,25 +5,11 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { BsGithub } from 'react-icons/bs';
-import { SquareArrowOutUpRight, Calendar, Link as LinkIcon, Tag, Building2, User2 } from 'lucide-react';
+import { SquareArrowOutUpRight, Link as LinkIcon, Tag, User2 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import portfolioData from './portfolio.json';
+import Link from 'next/link';
 
-// Types
-interface ProjectData {
-  id: string;
-  type: string;
-  name: string;
-  image: string;
-  demoUrl: string;
-  details: string;
-  codeUrl: string;
-  role: string;
-  description: string;
-  technicalDetails: string[];
-  keyFeatures: string[];
-  challenges: string[];
-}
 
 interface InfoCardProps {
   icon: React.ReactNode;
@@ -36,15 +22,15 @@ const InfoCard: React.FC<InfoCardProps> = ({ icon, label, value, href }) => (
   <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
     <div className="text-blue-500">{icon}</div>
     <div>
-      <p className="text-sm text-gray-500">{label}</p>
-      {href ? (
-        <a href={href} className="text-blue-500 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
-          {value}
-        </a>
-      ) : (
-        <p className="font-medium">{value}</p>
-      )}
-    </div>
+  <p className="text-sm text-gray-500">{label}</p>
+  {href ? (
+    <Link href={href} className="text-blue-500 hover:underline font-medium" target="_blank" rel="noopener noreferrer">
+      {value}
+    </Link>
+  ) : (
+    <p className="font-medium">{value}</p>
+  )}
+</div>
   </div>
 );
 
@@ -63,7 +49,7 @@ const ProjectDetail: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Breadcrumb */}
         <div className="flex items-center text-sm mb-8">
-          <a href="/" className="text-blue-500 hover:text-blue-600">Home</a>
+          <Link href="/" className="text-blue-500 hover:text-blue-600">Home</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-600">Project Details</span>
         </div>
@@ -149,18 +135,18 @@ const ProjectDetail: React.FC = () => {
             <div className="flex gap-4">
               {project.demoUrl !== "#" && (
                 <Button className="w-full" asChild>
-                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                     <SquareArrowOutUpRight className="mr-2 h-4 w-4" />
                     Live Demo
-                  </a>
+                  </Link>
                 </Button>
               )}
               {project.codeUrl !== "#" && (
                 <Button variant="outline" className="w-full" asChild>
-                  <a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                  <Link href={project.codeUrl} target="_blank" rel="noopener noreferrer">
                     <BsGithub className="mr-2 h-4 w-4" />
                     Code
-                  </a>
+                  </Link>
                 </Button>
               )}
             </div>

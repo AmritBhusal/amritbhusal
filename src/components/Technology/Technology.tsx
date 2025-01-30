@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FaHtml5, FaCss3Alt, FaBootstrap, FaJs, FaReact, FaGitAlt, FaGithub, FaBitbucket} from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiMui, SiHiveBlockchain, SiSolidity } from 'react-icons/si';
 import technologyData from './technology.json';

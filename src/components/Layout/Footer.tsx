@@ -41,7 +41,7 @@ const Footer = () => {
           {/* Inspiring Message */}
           <div className="bg-white/50 backdrop-blur-sm px-6 py-4 rounded-lg shadow-sm">
             <p className="text-gray-600 text-center max-w-2xl text-lg">
-              "Turn your dreams into reality through the power of technology and innovation."
+              Turn your dreams into reality through the power of technology and innovation.
             </p>
           </div>
 
