@@ -1,0 +1,57 @@
+{
+  "plans": [
+    {
+      "name": "Silver",
+      "price": 25000,
+      "extraPageCost": 5000,
+      "features": [
+        "Static Website (Up to 3 Pages)",
+        "Email Integration",
+        "Mobile Responsive Design",
+        "Basic SEO Setup",
+        "Contact Form Integration",
+        "2 Rounds of Revisions",
+        "5 Business Days Delivery"
+      ],
+      "color": "gray-300"
+    },
+    {
+      "name": "Gold",
+      "price": 45000,
+      "extraPageCost": 7000,
+      "features": [
+        "Static Website (Up to 5 Pages)",
+        "Email Integration",
+        "Mobile Responsive Design",
+        "Advanced SEO Setup",
+        "Contact Form Integration",
+        "Blog Setup",
+        "Social Media Integration",
+        "4 Rounds of Revisions",
+        "Premium Support (30 days)",
+        "7 Business Days Delivery"
+      ],
+      "color": "Yellow-500"
+    },
+    {
+      "name": "Platinum",
+      "price": 75000,
+      "extraPageCost": 8000,
+      "features": [
+        "Dynamic Website (Up to 8 Pages)",
+        "Email Integration",
+        "Mobile Responsive Design",
+        "Advanced SEO Setup",
+        "Custom Contact Forms",
+        "Blog with CMS",
+        "Social Media Integration",
+        "E-commerce Integration",
+        "Custom Animations",
+        "Unlimited Revisions",
+        "Priority Support (90 days)",
+        "10 Business Days Delivery"
+      ],
+      "color": "#0e7cb0"
+    }
+  ]
+}

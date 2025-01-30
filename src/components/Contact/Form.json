@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+    "id": "web-dev",
+    "name": "One page static Website Development",
+    "price": 10000,
+    "description": "Full website development from scratch"
+  },
+  {
+    "id": "feature",
+    "name": "Three-Four page static Website Development",
+    "price": 25000,
+    "description": "Adding new features to existing applications"
+  },
+  {
+    "id": "bug-fix",
+    "name": "Multi page Semi-dynamic Website Development",
+    "price": 80000,
+    "description": "Debugging and fixing issues in existing code"
+  },
+  {
+    "id": "consulting",
+    "name": "Technical Consulting",
+    "price": 15000,
+    "description": "Per hour technical consultation and advice"
+  },
+  {
+    "id": "code-review",
+    "name": "Code Review",
+    "price": 30000,
+    "description": "Comprehensive code review and recommendations"
+  }
+  ]
+}
