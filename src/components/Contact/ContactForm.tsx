@@ -25,7 +25,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from "@/hooks/use-toast"
-import taskData from './form.json'
+import taskData from './Form.json'
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
