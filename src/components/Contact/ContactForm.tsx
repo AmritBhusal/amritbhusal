@@ -31,7 +31,7 @@ const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
   task: z.string(),
-  contact: z.string().min(10, "Name must be at least 10 numbers"),
+  contact: z.string().min(10, "Contact must be at least 10 numbers"),
   message: z.string().min(20, "Message must be at least 20 characters"),
 })
 
