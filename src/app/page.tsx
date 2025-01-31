@@ -25,11 +25,7 @@ const page = () => {
         
         <div className="w-full flex items-center justify-center" id='portfolio'>
           <Portfolio />
-        </div>
-
-        {/* <div className="w-full flex items-center justify-center" id='pricing'>
-          <PricingPlans />
-        </div> */}
+        </div>        
 
         <div className="w-full flex items-center justify-center" id='contact'>
           <ContactForm />
