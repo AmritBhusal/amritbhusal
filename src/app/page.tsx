@@ -27,9 +27,9 @@ const page = () => {
           <Portfolio />
         </div>
 
-        <div className="w-full flex items-center justify-center" id='pricing'>
+        {/* <div className="w-full flex items-center justify-center" id='pricing'>
           <PricingPlans />
-        </div>
+        </div> */}
 
         <div className="w-full flex items-center justify-center" id='contact'>
           <ContactForm />
