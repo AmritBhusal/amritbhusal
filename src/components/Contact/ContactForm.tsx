@@ -37,6 +37,12 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>
 
+      const emailConfig = {
+        serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_w6m1039',
+        templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_1da7yz9',
+        publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '2Qc-EkZWztO3gSPrZ'
+      }
+
 export default function ContactForm() {
   const [totalAmount, setTotalAmount] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -53,15 +59,13 @@ export default function ContactForm() {
     },
   })
 
-  async function onSubmit(values: FormValues) {
+ async function onSubmit(values: FormValues) {
     try {
       setIsSubmitting(true)
       
-      // Get the selected task name from taskData
       const selectedTask = taskData.tasks.find(t => t.id === values.task)
       const taskName = selectedTask?.name || 'Not specified'
       
-      // Prepare email template parameters
       const templateParams = {
         from_name: values.name,
         from_email: values.email,
@@ -72,12 +76,12 @@ export default function ContactForm() {
         to_name: "Amrit Bhusal", 
       }
 
-      // Send email using EmailJS
+      // Use the config object here
       const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        emailConfig.serviceId,
+        emailConfig.templateId,
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        emailConfig.publicKey
       )
 
       if (response.status === 200) {
