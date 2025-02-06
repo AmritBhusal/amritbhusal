@@ -13,13 +13,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
@@ -151,36 +145,7 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormField
-              control={form.control}
-              name="task"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Service Required</FormLabel>
-                  <Select
-                    onValueChange={(value) => {
-                      field.onChange(value)
-                      calculateTotal(value, 1)
-                    }}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {taskData.tasks.map((task) => (
-                        <SelectItem key={task.id} value={task.id}>
-                          {task.name} (Rs. {task.price})
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">            
 
             <FormField
               control={form.control}
@@ -195,16 +160,7 @@ export default function ContactForm() {
                 </FormItem>
               )}
             />
-          </div>
-
-          <FormItem>
-            <FormLabel>Total Amount</FormLabel>
-            <Input
-              value={`Rs. ${totalAmount.toLocaleString()}`}
-              readOnly
-              className="bg-gray-50"
-            />
-          </FormItem>
+          </div>          
 
           <FormField
             control={form.control}
