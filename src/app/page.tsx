@@ -1,5 +1,4 @@
 import About from '@/components/About/About'
-import ContactForm from '@/components/Contact/ContactForm'
 import Intro from '@/components/Intro/intro'
 import Portfolio from '@/components/Portfolio/Portfolio'
 import Technology from '@/components/Technology/Technology'
