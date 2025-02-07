@@ -99,13 +99,6 @@ export default function ContactForm() {
     }
   }
 
-  const calculateTotal = (taskId: string, contact: number) => {
-    const task = taskData.tasks.find(t => t.id === taskId)
-    if (task) {
-      setTotalAmount(task.price * contact)
-    }
-  }
-
   return (
     <div className="w-full max-w-2xl mx-auto p-6 space-y-8">
       <div className="space-y-2 text-center">
