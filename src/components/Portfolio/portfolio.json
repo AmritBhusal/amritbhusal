@@ -1,10 +1,10 @@
 [
   {
-    "id": "1",
+    "id": "7",
     "type": "client",
     "name": "BIA Shop",
     "image": "/project/bia_shop.png",
-    "demoUrl": "",
+    "demoUrl": "https://shop.biainstitute.org/",
     "details": "An e-commerce platform designed to simplify shopping experiences.",
     "codeUrl": "#",
     "role": "Frontend Developer",
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "id": "2",
+    "id": "6",
     "type": "client",
     "name": "BIA ( Bodhisattvas In Action)",
     "image": "/project/bia.png",
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "id": "3",
+    "id": "5",
     "type": "client",
     "name": "Korifi B2B",
     "image": "/project/korifi.png",
@@ -91,7 +91,7 @@
       "Implementing real-time updates",
       "Creating intuitive user interfaces"
     ]
-    },
+  },
   {
     "id": "4",
     "type": "client",
@@ -124,7 +124,7 @@
     ]
   },
   {
-    "id": "5",
+    "id": "3",
     "type": "client",
     "name": "Ohayo Sushi",
     "image": "/project/ohayo.png",
@@ -155,7 +155,7 @@
     ]
   },
   {
-    "id": "6",
+    "id": "2",
     "type": "Personal",
     "name": "Centralized Blockchain Based Banking Transactions using Digital Currency",
     "image": "/project/cbbbtd.png",
@@ -186,7 +186,7 @@
     ]
   },
   {
-    "id": "7",
+    "id": "1",
     "type": "Personal",
     "name": "Digital Certificate Verification System Using Blockchain",
     "image": "/project/dcvs.png",
@@ -215,5 +215,37 @@
       "Managing certificate metadata",
       "Implementing verification logic"
     ]
+  },
+  {
+  "id": "8",
+  "type": "Personal",
+  "name": "Quick DevTools",
+  "image": "/project/quick-devtools.png",
+  "demoUrl": "https://quick-devtools.netlify.app/",
+  "details": "A collection of helpful tools for developers to streamline their workflow.",
+  "codeUrl": "#",
+  "role": "Full Stack Developer",
+  "description": "Designed and implemented a suite of web-based tools to assist developers in tasks such as password generation, JSON formatting, type identification, URL encoding, and Base64 conversion.",
+  "technicalDetails": [
+    "Developed using Next.js for server-side rendering and React for dynamic user interfaces.",
+    "Implemented TypeScript for type safety and improved code maintainability.",
+    "Styled the application using Tailwind CSS for responsive and modern design.",
+    "Deployed the application on Netlify for continuous deployment and hosting.",
+    "Integrated various utility libraries to handle specific tasks like JSON formatting and Base64 conversion."
+  ],
+  "keyFeatures": [
+    "Password Generator: Create strong and secure passwords.",
+    "JSON Formatter: Beautify and validate JSON data.",
+    "Type Identifier: Determine data types quickly.",
+    "URL Encoder: Encode and decode URLs efficiently.",
+    "Base64 Converter: Convert data to and from Base64 encoding."
+  ],
+  "challenges": [
+    "Ensuring the accuracy and reliability of each tool's functionality.",
+    "Designing a cohesive and intuitive user interface for multiple tools.",
+    "Managing state and performance optimization across various components.",
+    "Implementing security measures to prevent potential vulnerabilities.",
+    "Maintaining scalability for adding future tools and features."
+  ]
   }
 ]

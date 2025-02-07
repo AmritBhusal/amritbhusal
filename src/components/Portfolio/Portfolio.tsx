@@ -10,16 +10,19 @@ import Image from 'next/image';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all'); 
-  
+
+  // Sort projects in descending order based on id
+  const sortedProjects = [...portfolioData].sort((a, b) => Number(b.id) - Number(a.id));
+
   const filteredProjects = filter === 'all' 
-    ? portfolioData 
-    : portfolioData.filter(project => project.type.toLowerCase() === filter.toLowerCase());
+    ? sortedProjects 
+    : sortedProjects.filter(project => project.type.toLowerCase() === filter.toLowerCase());
 
   return (
     <div className="flex flex-col items-center justify-center w-full md:w-[95%] p-2 overflow-hidden">
       <div className='w-full flex items-center justify-center'>
-                <span className='font-bold text-3xl whitespace-nowrap text-center'>Portfolio</span>
-            </div>
+        <span className='font-bold text-3xl whitespace-nowrap text-center'>Portfolio</span>
+      </div>
       <div className="flex flex-col items-center justify-center w-full gap-10">
         <div className="flex flex-wrap gap-6 border-b p-8 w-full justify-center">
           {['all', 'client', 'personal'].map((type) => (
