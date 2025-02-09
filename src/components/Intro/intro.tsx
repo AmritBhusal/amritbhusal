@@ -3,6 +3,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp, FaLinkedin } from "react-icons/fa"
 import introData from './intro.json';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
+import Image from 'next/image';
 
 const Intro = () => {
   return (
@@ -85,9 +86,15 @@ const Intro = () => {
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center justify-center p-8 rounded-full bg-gray-300 w-[250px] h-[250px]">
-        <div className="w-full h-full"></div>
-      </div>
+      <div className="relative w-[250px] h-[250px] rounded-full overflow-hidden">
+          <Image 
+            src="/profile.jpg" 
+            alt="Profile Picture" 
+            width={250} 
+            height={250} 
+            className="w-full h-full object-cover"
+          />
+        </div>
     </div>
   );
 };
