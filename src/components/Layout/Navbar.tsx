@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/button';
 
 const Navbar = () => {
@@ -97,12 +97,12 @@ const Navbar = () => {
             >
               Get Started
             </Button>
-            {/* <button
+            <button
               onClick={toggleMenu}
               className="text-gray-700 hover:text-purple-600 focus:outline-none"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button> */}
+              {isOpen ?  <div></div>: <Menu size={24} />}
+            </button>
           </div>
         </div>
       </div>

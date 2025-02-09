@@ -19,7 +19,7 @@ const About = () => {
         </span>
       </div>
       <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6">
-        <div className="bg-white overflow-hidden object-cover w-[100%] md:min-w-[250px] md:max-w-[250px] min-h-[250px] max-h-[250px] rounded-2xl shadow-lg">
+        <div className="bg-white overflow-hidden object-cover w-[100%] md:min-w-[250px] md:max-w-[250px] lg:min-h-[250px] lg:max-h-[250px] rounded-2xl shadow-lg">
            <Image 
                       src="/profile.jpg" 
                       alt="Profile Picture" 
