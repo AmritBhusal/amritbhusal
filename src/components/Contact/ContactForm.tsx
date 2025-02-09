@@ -160,10 +160,10 @@ export default function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Project Details</FormLabel>
+                <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Please describe your project requirements..."
+                    placeholder="Drop your message here..."
                     className="min-h-[120px]"
                     {...field}
                   />

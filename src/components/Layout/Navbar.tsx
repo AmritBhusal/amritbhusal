@@ -46,7 +46,6 @@ const Navbar = () => {
     { id: 'about', label: 'About' },
     { id: 'technology', label: 'Technology' },
     { id: 'portfolio', label: 'Portfolio' },
-    { id: 'pricing', label: 'Pricing' },    
   ];
 
   return (
