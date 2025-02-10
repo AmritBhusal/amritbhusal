@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Amrit Bhusal",
-  description: "As a front-end developer from Nepal, I specialize in Next.js, TypeScript, and Tailwind CSS. My portfolio showcases responsive and dynamic web applications that highlight my expertise in creating user-centric designs and writing clean, efficient code.",
+  description: "As a front-end developer from Nepal, I specialize in React, Next.js, TypeScript, JavaSript and Tailwind CSS. My portfolio showcases responsive and dynamic web applications that highlight my expertise in creating user-centric designs and writing clean, efficient code.",
 };
 
 export default function RootLayout({
