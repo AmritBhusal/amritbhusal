@@ -3,7 +3,7 @@
     "id": "7",
     "type": "client",
     "name": "BIA Shop",
-    "image": "https://github.com/AmritBhusal/amritbhusal/blob/main/public/project/bia_shop.png",
+    "image": "/project/bia_shop.png",
     "demoUrl": "https://shop.biainstitute.org/",
     "details": "An e-commerce platform designed to simplify shopping experiences.",
     "codeUrl": "#",
