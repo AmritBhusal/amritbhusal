@@ -17,7 +17,7 @@ const Intro = () => {
               {introData.greeting}
             </span>
           </div>
-
+          
           {/* Name Section */}
           <div className="overflow-hidden">
             <h1 className="font-bold text-3xl opacity-0 animate-scale-in delay-400">
@@ -27,7 +27,7 @@ const Intro = () => {
               </span>
             </h1>
           </div>
-
+          
           {/* Role */}
           <div className="overflow-hidden">
             <span className="font-bold text-2xl inline-block opacity-0 animate-text-focus-in delay-600">
@@ -35,7 +35,7 @@ const Intro = () => {
             </span>
           </div>
         </div>
-
+        
         <section className="flex flex-col items-start gap-3 justify-start text-start">
           {/* CTA Heading */}
           <div className="overflow-hidden">
@@ -43,7 +43,7 @@ const Intro = () => {
               {introData.ctaHeading}
             </h2>
           </div>
-
+          
           {/* Description */}
           <div className="overflow-hidden max-w-xl">
             <p className="text-gray-600">
@@ -69,15 +69,15 @@ const Intro = () => {
                 <Button className="animate-button shadow-custom">Hire Me</Button>
               </a>
             </div>
-
+            
             <div className="opacity-0 animate-scale-in delay-1000">
-              <a
-                href={introData.resume}
-                download
+              <a 
+                href={introData.resume} 
+                download 
                 className="inline-block transform hover:scale-110 transition-all duration-300"
               >
                 <Button variant="outline" className="group shadow-custom">
-                  Resume
+                  Resume 
                   <Download className="ml-2 group-hover:translate-y-1 transition-transform duration-300" />
                 </Button>
               </a>
@@ -115,11 +115,11 @@ const Intro = () => {
       {/* Right Section - Profile Image */}
       <div className="relative w-[250px] h-[250px] rounded-full overflow-hidden opacity-0 animate-scale-in">
         <div className="absolute inset-0 bg-[#0e7cbe] opacity-20 animate-button" />
-        <Image
-          src="/profile.jpg"
-          alt="Profile Picture"
-          width={250}
-          height={250}
+        <Image 
+          src="/profile.jpg" 
+          alt="Profile Picture" 
+          width={250} 
+          height={250} 
           className="w-full h-full object-cover transform hover:scale-110 transition-all duration-500"
           priority
         />

@@ -1,0 +1,33 @@
+{
+  "skillCategories": [
+    {
+      "category": "Frontend",
+      "skills": [
+        "HTML", "CSS", "SCSS", "Tailwind", "Bootstrap",
+        "JavaScript", "TypeScript", "React.js", "Vue", "Angular", "Astro"
+      ]
+    },
+    {
+      "category": "Backend",
+      "skills": [
+        "Node", "PNPM", "Java", "Spring", "MongoDB",
+        "MySQL", "PostgreSQL", "Python"
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "skills": [
+        "Git", "GitHub", "AWS", "Docker", "Kubernetes",
+        "Shell", "Linux", "Swagger", "Postman", "Figma"
+      ]
+    },
+    {
+      "category": "Testing",
+      "skills": ["Jest", "Jasmine"]
+    },
+    {
+      "category": "Languages",
+      "skills": ["English", "Nepali", "Hindi"]
+    }
+  ]
+}
