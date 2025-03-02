@@ -224,7 +224,7 @@
   "demoUrl": "https://quick-devtools.netlify.app/",
   "details": "A collection of helpful tools for developers to streamline their workflow.",
   "codeUrl": "#",
-  "role": "Full Stack Developer",
+  "role": "Frontend Developer",
   "description": "Designed and implemented a suite of web-based tools to assist developers in tasks such as password generation, JSON formatting, type identification, URL encoding, and Base64 conversion.",
   "technicalDetails": [
     "Developed using Next.js for server-side rendering and React for dynamic user interfaces.",
