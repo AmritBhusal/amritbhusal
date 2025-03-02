@@ -9,7 +9,7 @@
 
 - 🌱 I’m currently learning **React-native and J-query**
 
-- 👨‍💻 All of my projects are available at [https://amritbhusal.netlify.app/](https://amritbhusal.netlify.app/)
+- 👨‍💻 All of my projects are available at [https://amritbhusal1.com.np/](https://amritbhusal1.com.np/)
 
 - 💬 Ask me about **React, Solidity and Blockchain**
 
