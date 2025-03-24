@@ -1,5 +1,5 @@
 <h1 align="center">👨‍💻 Amrit Bhusal</h1>
-<h3 align="center">Frontend Developer & Web3 Specialist</h3>
+<h3 align="center">Frontend Developer</h3>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/amrit-bhusal1/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
