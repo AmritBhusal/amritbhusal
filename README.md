@@ -22,6 +22,11 @@ I'm a passionate **Frontend Engineer** with expertise in **Web3 technologies** a
 - 🔍 Strong focus on creating seamless user experiences
 - 🌐 Passionate about blockchain technology and decentralized systems
 
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=amritbhusal&label=Profile%20views&color=0e75b6&style=flat" alt="amritbhusal" /> </p>
+
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=amritbhusal" alt="amritbhusal" /></a> </p>
+
 ## 💻 Technical Skills
 
 ### Frontend Development
