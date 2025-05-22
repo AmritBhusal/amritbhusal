@@ -286,7 +286,7 @@
     "type": "client",
     "name": "SquareBx",
     "image": "/project/squarebx.png",
-    "demoUrl": "https://squarebx.vercel.app/",
+    "demoUrl": "https://squarebx.com",
     "details": "A sleek, responsive static website designed for a creative digital agency to showcase services, portfolio, and client testimonials.",
     "codeUrl": "#",
     "role": "Frontend Developer",
