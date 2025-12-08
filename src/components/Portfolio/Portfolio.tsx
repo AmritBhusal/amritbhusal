@@ -118,7 +118,7 @@ const Portfolio = () => {
           </div>
         )}
 
-        <div className="text-center text-gray-600">
+        <div className="text-center text-gray-400">
           Showing {projectsToShow.length} of {filteredProjects.length} projects
         </div>
       </div>

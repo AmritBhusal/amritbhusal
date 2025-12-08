@@ -27,15 +27,15 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
   task: z.string(),
   contact: z.string().min(10, "Contact must be at least 10 numbers"),
-  message: z.string().min(20, "Message must be at least 20 characters"),
+  message: z.string(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 const emailConfig = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_w6m1039",
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_1da7yz9",
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "2Qc-EkZWztO3gSPrZ",
+  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
 };
 
 export default function ContactForm() {
@@ -103,25 +103,22 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 py-16 px-4">
+    <div className="min-h-screen bg-background py-16 px-4">
       <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200/50 backdrop-blur-sm">
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 px-8 py-12 text-white relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/10"></div>
+        <div className="bg-card rounded-none shadow-none border border-border backdrop-blur-sm">
+          <div className="bg-muted px-8 py-12 text-foreground relative overflow-hidden border-b border-border">
             <div className="relative z-10 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
-                <MessageCircle size={32} className="text-white" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-background rounded-full mb-6 border border-border">
+                <MessageCircle size={32} className="text-foreground" />
               </div>
-              <h2 className="text-4xl font-bold mb-3 tracking-tight">
+              <h2 className="text-4xl font-bold mb-3 tracking-tight text-foreground">
                 Get In Touch
               </h2>
-              <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
                 Ready to bring your ideas to life? Let's discuss your project
                 requirements and create something amazing together.
               </p>
             </div>
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
           </div>
 
           <div className="p-8 md:p-12">
@@ -136,15 +133,15 @@ export default function ContactForm() {
                     name="name"
                     render={({ field }) => (
                       <FormItem className="space-y-3">
-                        <FormLabel className="text-slate-700 font-semibold flex items-center gap-2">
-                          <User size={18} className="text-blue-600" />
+                        <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                          <User size={18} className="text-muted-foreground" />
                           Full Name
                         </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Enter your full name"
                             {...field}
-                            className="h-12 border-slate-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-200 bg-slate-50/50 hover:bg-white focus:bg-white"
+                            className="h-12 border-border focus:border-foreground rounded-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
                           />
                         </FormControl>
                         <FormMessage />
@@ -157,8 +154,8 @@ export default function ContactForm() {
                     name="email"
                     render={({ field }) => (
                       <FormItem className="space-y-3">
-                        <FormLabel className="text-slate-700 font-semibold flex items-center gap-2">
-                          <Mail size={18} className="text-blue-600" />
+                        <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                          <Mail size={18} className="text-muted-foreground" />
                           Email Address
                         </FormLabel>
                         <FormControl>
@@ -166,7 +163,7 @@ export default function ContactForm() {
                             placeholder="your.email@example.com"
                             type="email"
                             {...field}
-                            className="h-12 border-slate-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-200 bg-slate-50/50 hover:bg-white focus:bg-white"
+                            className="h-12 border-border focus:border-foreground rounded-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
                           />
                         </FormControl>
                         <FormMessage />
@@ -181,15 +178,15 @@ export default function ContactForm() {
                     name="contact"
                     render={({ field }) => (
                       <FormItem className="space-y-3">
-                        <FormLabel className="text-slate-700 font-semibold flex items-center gap-2">
-                          <Phone size={18} className="text-blue-600" />
+                        <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                          <Phone size={18} className="text-muted-foreground" />
                           Contact Number
                         </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="98xxxxxxxx"
                             {...field}
-                            className="h-12 border-slate-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl transition-all duration-200 bg-slate-50/50 hover:bg-white focus:bg-white"
+                            className="h-12 border-border focus:border-foreground rounded-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
                           />
                         </FormControl>
                         <FormMessage />
@@ -203,14 +200,14 @@ export default function ContactForm() {
                   name="message"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <FormLabel className="text-slate-700 font-semibold flex items-center gap-2">
-                        <MessageCircle size={18} className="text-blue-600" />
+                      <FormLabel className="text-foreground font-semibold flex items-center gap-2">
+                        <MessageCircle size={18} className="text-muted-foreground" />
                         Project Details
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Tell me about your project, goals, timeline, and any specific requirements you have in mind..."
-                          className="min-h-[140px] border-slate-200 focus:border-blue-500 focus:ring-blue-500/20 rounded-xl resize-none transition-all duration-200 bg-slate-50/50 hover:bg-white focus:bg-white"
+                          className="min-h-[140px] border-border focus:border-foreground rounded-none resize-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
                           {...field}
                         />
                       </FormControl>
@@ -222,13 +219,13 @@ export default function ContactForm() {
                 <div className="pt-4">
                   <Button
                     type="submit"
-                    className="w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="w-full h-14 bg-foreground text-background hover:bg-muted-foreground font-semibold rounded-none border border-border hover:border-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isSubmitting}
                   >
                     <div className="flex items-center justify-center gap-3">
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <div className="w-5 h-5 border-2 border-background border-t-transparent rounded-full animate-spin"></div>
                           Sending Message...
                         </>
                       ) : (
@@ -245,7 +242,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="text-center mt-8 text-slate-500">
+        <div className="text-center mt-8 text-muted-foreground">
           <p>I typically respond within 24 hours</p>
         </div>
       </div>

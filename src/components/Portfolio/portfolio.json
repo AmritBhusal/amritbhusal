@@ -193,7 +193,7 @@
     "demoUrl": "#",
     "details": "A distributed version control system for efficient collaboration.",
     "codeUrl": "https://github.com/AmritBhusal/DCVS.git",
-    "role": "Backend Developer",
+    "role": "FullStack Developer",
     "description": "Designed and implemented backend logic for managing distributed repositories.",
     "technicalDetails": [
       "Implemented smart contracts using Solidity",
@@ -248,13 +248,12 @@
       "Maintaining scalability for adding future tools and features."
     ]
   },
-
   {
     "id": "9",
     "type": "client",
     "name": "TripMover",
     "image": "/project/trip-mover.png",
-    "demoUrl": "https://tripmover.co",
+    "demoUrl": "#",
     "details": "A modern, responsive static website designed for travel agencies to streamline bookings and customer engagement.",
     "codeUrl": "#",
     "role": "Frontend Developer",
@@ -286,7 +285,7 @@
     "type": "client",
     "name": "SquareBx",
     "image": "/project/squarebx.png",
-    "demoUrl": "https://squarebx.com",
+    "demoUrl": "#",
     "details": "A sleek, responsive static website designed for a creative digital agency to showcase services, portfolio, and client testimonials.",
     "codeUrl": "#",
     "role": "Frontend Developer",
@@ -381,12 +380,92 @@
   {
     "id": "13",
     "type": "client",
+    "name": "LDTA - Local Development Training Academy",
+    "image": "/project/ldta.png",
+    "demoUrl": "https://ldta.gov.np/",
+    "details": "An autonomous government institution's platform for training programs, research, and capacity building for local government administration.",
+    "codeUrl": "#",
+    "role": "Frontend Developer",
+    "description": "Developed a comprehensive bilingual (Nepali/English) government portal with dynamic content management for training programs, announcements, and media resources.",
+    "technicalDetails": [
+      "Built bilingual interface with Nepali and English language support",
+      "Implemented dynamic news and announcement carousel",
+      "Developed responsive layouts for government compliance standards",
+      "Created interactive training program showcase and filtering",
+      "Integrated gallery with image optimization",
+      "Built real-time statistics dashboard for impact metrics",
+      "Implemented online application forms and e-library system"
+    ],
+    "keyFeatures": [
+      "Bilingual content management (Nepali/English)",
+      "Training program management and roster",
+      "Real-time news and announcements",
+      "E-library and digital resources",
+      "Online application system",
+      "Impact statistics dashboard",
+      "Media gallery and press releases",
+      "Training center information",
+      "FAQ management system"
+    ],
+    "challenges": [
+      "Implementing proper Unicode support for Nepali language",
+      "Managing complex government content structure",
+      "Ensuring accessibility compliance for government standards",
+      "Optimizing performance with dynamic content loading",
+      "Creating intuitive navigation for diverse user base",
+      "Handling multiple content types (training, research, consulting)"
+    ]
+  },
+  {
+    "id": "14",
+    "type": "client",
+    "name": "Rara Treks Tours and Travels",
+    "image": "/project/rara.png",
+    "demoUrl": "https://raratreks.com/",
+    "details": "Nepal's tour operator specializing in trekking, tours, and travel services across Himalayan destinations including Rara Lake, Everest, Langtang, and cultural heritage sites.",
+    "codeUrl": "#",
+    "role": "Full Stack Developer",
+    "description": "Developed the complete Rara Treks platform from scratch, creating a comprehensive trekking and tour booking website with dynamic content management, destination showcases, and integrated booking systems for international travelers.",
+    "technicalDetails": [
+      "Built responsive frontend architecture from ground up using modern frameworks",
+      "Developed custom CMS for managing trekking packages and destinations",
+      "Implemented image optimization and lazy loading for destination galleries",
+      "Created dynamic itinerary builder with day-by-day breakdown",
+      "Built RESTful APIs for booking management and availability",
+      "Integrated payment gateway for online reservations",
+      "Developed multi-category navigation system (treks, tours, hotels, cars)",
+      "Implemented SEO optimization for destination pages",
+      "Created admin dashboard for content and booking management"
+    ],
+    "keyFeatures": [
+      "Comprehensive trekking packages (Rara Lake, Everest Base Camp, Langtang, Dolpo)",
+      "Cultural tour programs (Kathmandu, Pokhara, Janakpur)",
+      "Car rental services showcase",
+      "Dynamic itinerary system with detailed day plans",
+      "Blog platform with travel guides and trekking tips",
+      "Online booking and inquiry management",
+      "Real-time availability and pricing system"
+    ],
+    "challenges": [
+      "Architecting scalable system for extensive destination catalogs",
+      "Implementing efficient image optimization for high-quality trek photos",
+      "Creating flexible itinerary management system for varied packages",
+      "Building robust booking system with conflict prevention",
+      "Designing intuitive navigation for diverse service categories",
+      "Ensuring fast performance with content-heavy destination pages",
+      "Implementing multilingual support for international audience",
+      "Managing complex pricing structures for seasonal variations"
+    ]
+  },
+  {
+    "id": "15",
+    "type": "client",
     "name": "Community Homestay Network",
     "image": "/project/community-homestay.png",
     "demoUrl": "https://communityhomestay.com/",
     "details": "A platform connecting travelers with local Nepali communities through authentic homestay experiences.",
     "codeUrl": "#",
-    "role": "Frontend & API Contributor",
+    "role": "Frontend Developer",
     "description": "Collaborated on the Community Homestay Network platform by addressing frontend bugs, implementing minor UI enhancements, and contributing to API development for improved data handling and user experience.",
     "technicalDetails": [
       "Assisted in debugging and resolving frontend issues to enhance user interaction.",
@@ -411,14 +490,14 @@
     ]
   },
   {
-    "id": "14",
+    "id": "16",
     "type": "client",
     "name": "Ultima Lifestyle",
     "image": "/project/ultima-lifestyle.png",
     "demoUrl": "https://ultima.com.np/",
     "details": "An e-commerce platform for Ultima Lifestyle, a Nepali brand offering tech accessories like earbuds, smartwatches, and speakers.",
     "codeUrl": "#",
-    "role": "Full-Stack Developer",
+    "role": "Frontend Developer",
     "description": "Contributed significantly to the development of a custom Laravel-based admin panel for efficient product and order management. Also participated in enhancing the Next.js frontend to improve user experience and interface responsiveness.",
     "technicalDetails": [
       "Developed a Laravel-based admin panel for managing products, orders, and customer data.",
@@ -444,11 +523,11 @@
     ]
   },
   {
-    "id": "15",
+    "id": "17",
     "type": "client",
     "name": "Gadgetbyte Nepal",
     "image": "/project/gadgetbyte-nepal.png",
-    "demoUrl": "https://uat.gadgetbyte.com.np/",
+    "demoUrl": "https://gadgetbyte.com.np/",
     "details": "A comprehensive tech news and gadget review platform in Nepal, migrated from WordPress to a modern stack for enhanced performance and scalability.",
     "codeUrl": "#",
     "role": "Full-Stack Developer",

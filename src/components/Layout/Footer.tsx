@@ -5,7 +5,7 @@ import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
     {
       icon: <BsGithub size={20} />,
@@ -25,22 +25,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gray-100">
-      {/* Subtle Grid Pattern */}
-      <div 
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, gray 1px, transparent 1px)`,
-          backgroundSize: '24px 24px'
-        }}
-      />
-      
+    <footer className="relative bg-background border-t border-border">
+      {/* Subtle Grid Pattern REMOVED */}
+
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center space-y-8">
           {/* Inspiring Message */}
-          <div className="bg-white/50 backdrop-blur-sm px-6 py-4 rounded-lg shadow-sm">
-            <p className="text-gray-600 text-center max-w-2xl text-lg">
+          <div className="bg-muted/30 backdrop-blur-sm px-6 py-4 rounded-none border border-border">
+            <p className="text-muted-foreground text-center max-w-2xl text-lg">
               Turn your dreams into reality through the power of technology and innovation.
             </p>
           </div>
@@ -53,7 +46,7 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-purple-600 transform hover:scale-110 transition-all duration-200"
+                className="text-muted-foreground hover:text-foreground transition-all duration-200"
                 aria-label={link.label}
               >
                 {link.icon}
@@ -62,7 +55,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-gray-500 text-sm text-center">
+          <div className="text-muted-foreground text-sm text-center">
             © {currentYear} Amrit Bhusal. All rights reserved.
           </div>
         </div>

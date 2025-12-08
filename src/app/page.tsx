@@ -1,6 +1,5 @@
-import About from '@/components/About/About'
 import ContactForm from '@/components/Contact/ContactForm'
-import Intro from '@/components/Intro/intro'
+import ProfileSection from '@/components/Intro/ProfileSection'
 import Portfolio from '@/components/Portfolio/Portfolio'
 import Technology from '@/components/Technology/Technology'
 import React from 'react'
@@ -8,30 +7,27 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="w-full flex items-center justify-center md:p-4">
-      <div className="w-[95%] gap-10 flex flex-col items-center justify-center lg:p-6">
-        <div className='w-full flex flex-col'>
-          <div className="w-full flex items-center justify-center" id="home">
-            <Intro />
-          </div>
+    <div className="w-full bg-[#0d1117] min-h-screen">
+      <div className="w-full flex flex-col items-center">
 
-          <div className="w-full flex items-center justify-center" id="about">
-            <About />
-          </div>
+        {/* Profile Section (Combines Intro + About) */}
+        <div className="w-full flex justify-center border-b border-[#30363d]" id="home">
+          <ProfileSection />
         </div>
 
+        {/* Portfolio/Projects Section */}
+        <div className="w-full flex items-center justify-center py-8 border-b border-[#30363d]" id="portfolio">
+          <Portfolio />
+        </div>
+{/* Technology/Stats Section */}
         <div
-          className="w-full flex items-center justify-center"
+          className="w-full flex items-center justify-center py-8 border-b border-[#30363d]"
           id="technology"
         >
           <Technology />
         </div>
-
-        <div className="w-full flex items-center justify-center" id="portfolio">
-          <Portfolio />
-        </div>
-
-        <div className="w-full flex items-center justify-center" id="contact">
+        {/* Contact Section */}
+        <div className="w-full flex items-center justify-center py-8" id="contact">
           <ContactForm />
         </div>
       </div>
