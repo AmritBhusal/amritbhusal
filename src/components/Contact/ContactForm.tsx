@@ -33,9 +33,9 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const emailConfig = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "",
+  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_w6m1039",
+  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_1da7yz9",
+  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "2Qc-EkZWztO3gSPrZ",
 };
 
 export default function ContactForm() {
