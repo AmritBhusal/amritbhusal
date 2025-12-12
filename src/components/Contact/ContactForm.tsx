@@ -103,48 +103,48 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="min-h-screen bg-background py-16 px-4">
+    <div className="bg-[#0d1117] py-8 px-4">
       <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-card rounded-none shadow-none border border-border backdrop-blur-sm">
-          <div className="bg-muted px-8 py-12 text-foreground relative overflow-hidden border-b border-border">
+        <div className="bg-[#0d1117] rounded-md border border-[#30363d]">
+          <div className="bg-[#161b22] px-8 py-8 text-[#c9d1d9] relative overflow-hidden border-b border-[#30363d] rounded-t-md">
             <div className="relative z-10 text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-background rounded-full mb-6 border border-border">
-                <MessageCircle size={32} className="text-foreground" />
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-[#21262d] rounded-full mb-4 border border-[#30363d]">
+                <MessageCircle size={28} className="text-[#8b949e]" />
               </div>
-              <h2 className="text-4xl font-bold mb-3 tracking-tight text-foreground">
+              <h2 className="text-2xl font-bold mb-2 tracking-tight text-[#c9d1d9]">
                 Get In Touch
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+              <p className="text-[#8b949e] text-base max-w-2xl mx-auto leading-relaxed">
                 Ready to bring your ideas to life? Let's discuss your project
                 requirements and create something amazing together.
               </p>
             </div>
           </div>
 
-          <div className="p-8 md:p-12">
+          <div className="p-6 md:p-8">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8"
+                className="space-y-6"
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
-                      <FormItem className="space-y-3">
-                        <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                          <User size={18} className="text-muted-foreground" />
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
+                          <User size={16} className="text-[#8b949e]" />
                           Full Name
                         </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Enter your full name"
                             {...field}
-                            className="h-12 border-border focus:border-foreground rounded-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
+                            className="h-10 border-[#30363d] focus:border-[#58a6ff] rounded-md transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-[#f85149]" />
                       </FormItem>
                     )}
                   />
@@ -153,9 +153,9 @@ export default function ContactForm() {
                     control={form.control}
                     name="email"
                     render={({ field }) => (
-                      <FormItem className="space-y-3">
-                        <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                          <Mail size={18} className="text-muted-foreground" />
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
+                          <Mail size={16} className="text-[#8b949e]" />
                           Email Address
                         </FormLabel>
                         <FormControl>
@@ -163,33 +163,33 @@ export default function ContactForm() {
                             placeholder="your.email@example.com"
                             type="email"
                             {...field}
-                            className="h-12 border-border focus:border-foreground rounded-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
+                            className="h-10 border-[#30363d] focus:border-[#58a6ff] rounded-md transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-[#f85149]" />
                       </FormItem>
                     )}
                   />
                 </div>
 
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 gap-4">
                   <FormField
                     control={form.control}
                     name="contact"
                     render={({ field }) => (
-                      <FormItem className="space-y-3">
-                        <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                          <Phone size={18} className="text-muted-foreground" />
+                      <FormItem className="space-y-2">
+                        <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
+                          <Phone size={16} className="text-[#8b949e]" />
                           Contact Number
                         </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="98xxxxxxxx"
                             {...field}
-                            className="h-12 border-border focus:border-foreground rounded-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
+                            className="h-10 border-[#30363d] focus:border-[#58a6ff] rounded-md transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
                           />
                         </FormControl>
-                        <FormMessage />
+                        <FormMessage className="text-[#f85149]" />
                       </FormItem>
                     )}
                   />
@@ -199,38 +199,38 @@ export default function ContactForm() {
                   control={form.control}
                   name="message"
                   render={({ field }) => (
-                    <FormItem className="space-y-3">
-                      <FormLabel className="text-foreground font-semibold flex items-center gap-2">
-                        <MessageCircle size={18} className="text-muted-foreground" />
+                    <FormItem className="space-y-2">
+                      <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
+                        <MessageCircle size={16} className="text-[#8b949e]" />
                         Project Details
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Tell me about your project, goals, timeline, and any specific requirements you have in mind..."
-                          className="min-h-[140px] border-border focus:border-foreground rounded-none resize-none transition-all duration-200 bg-background hover:bg-muted focus:bg-background"
+                          className="min-h-[120px] border-[#30363d] focus:border-[#58a6ff] rounded-md resize-none transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="text-[#f85149]" />
                     </FormItem>
                   )}
                 />
 
-                <div className="pt-4">
+                <div className="pt-2">
                   <Button
                     type="submit"
-                    className="w-full h-14 bg-foreground text-background hover:bg-muted-foreground font-semibold rounded-none border border-border hover:border-foreground transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full h-12 bg-[#238636] text-white hover:bg-[#2ea043] font-semibold rounded-md border border-[rgba(240,246,252,0.1)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     disabled={isSubmitting}
                   >
                     <div className="flex items-center justify-center gap-3">
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-background border-t-transparent rounded-full animate-spin"></div>
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                           Sending Message...
                         </>
                       ) : (
                         <>
-                          <Send size={20} />
+                          <Send size={18} />
                           Send Message
                         </>
                       )}
@@ -242,7 +242,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="text-center mt-8 text-muted-foreground">
+        <div className="text-center mt-6 text-[#8b949e] text-sm">
           <p>I typically respond within 24 hours</p>
         </div>
       </div>
