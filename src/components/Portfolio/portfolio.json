@@ -527,7 +527,7 @@
     "type": "client",
     "name": "Gadgetbyte Nepal",
     "image": "/project/gadgetbyte-nepal.png",
-    "demoUrl": "https://gadgetbyte.com.np/",
+    "demoUrl": "https://www.gadgetbytenepal.com/",
     "details": "A comprehensive tech news and gadget review platform in Nepal, migrated from WordPress to a modern stack for enhanced performance and scalability.",
     "codeUrl": "#",
     "role": "Full-Stack Developer",
