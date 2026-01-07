@@ -1,14 +1,23 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { MapPin, Link as LinkIcon, Mail, Users, GitBranch, Book, Package, FolderKanban, Search } from 'lucide-react';
+import { MapPin, Link as LinkIcon, Mail, Users, GitBranch, Book, Package, FolderKanban, Search, Pin, Check } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaHtml5, FaCss3Alt, FaBootstrap, FaJs, FaReact, FaGitAlt, FaBitbucket } from 'react-icons/fa';
 import { SiNextdotjs, SiTailwindcss, SiMui, SiHiveBlockchain, SiSolidity, SiTypescript } from 'react-icons/si';
 import introData from './intro.json';
 import aboutData from '../About/about.json';
 import portfolioData from '../Portfolio/portfolio.json';
 import ContactForm from '../Contact/ContactForm';
+import Link from 'next/link';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+    DialogFooter,
+} from '@/components/ui/dialog';
 
 type TabType = 'overview' | 'repositories' | 'projects';
 
@@ -30,11 +39,37 @@ interface Project {
 const ProfileSection = () => {
     const [activeTab, setActiveTab] = useState<TabType>('overview');
     const [searchQuery, setSearchQuery] = useState('');
+    const [isPinDialogOpen, setIsPinDialogOpen] = useState(false);
+    const [pinnedIds, setPinnedIds] = useState<string[]>([]);
+    const [tempPinnedIds, setTempPinnedIds] = useState<string[]>([]);
 
     const projects: Project[] = portfolioData as Project[];
     const sortedProjects = [...projects].sort((a, b) => Number(b.id) - Number(a.id));
-    const pinnedProjects = sortedProjects.slice(0, 4);
     const totalRepos = projects.length;
+
+    // Load pinned projects from localStorage on mount
+    useEffect(() => {
+        const saved = localStorage.getItem('pinnedProjects');
+        if (saved) {
+            try {
+                const parsed = JSON.parse(saved);
+                setPinnedIds(parsed);
+            } catch {
+                // Default to first 4 if parsing fails
+                const defaultPins = sortedProjects.slice(0, 4).map(p => p.id);
+                setPinnedIds(defaultPins);
+            }
+        } else {
+            // Default to first 4 projects
+            const defaultPins = sortedProjects.slice(0, 4).map(p => p.id);
+            setPinnedIds(defaultPins);
+        }
+    }, []);
+
+    // Get pinned projects based on saved IDs
+    const pinnedProjects = pinnedIds
+        .map(id => projects.find(p => p.id === id))
+        .filter((p): p is Project => p !== undefined);
 
     const filteredRepos = searchQuery
         ? sortedProjects.filter(p =>
@@ -42,6 +77,33 @@ const ProfileSection = () => {
             p.details.toLowerCase().includes(searchQuery.toLowerCase())
         )
         : sortedProjects;
+
+    const handleOpenPinDialog = () => {
+        setTempPinnedIds([...pinnedIds]);
+        setIsPinDialogOpen(true);
+    };
+
+    const handleTogglePin = (projectId: string) => {
+        setTempPinnedIds(prev => {
+            if (prev.includes(projectId)) {
+                return prev.filter(id => id !== projectId);
+            } else if (prev.length < 6) {
+                return [...prev, projectId];
+            }
+            return prev;
+        });
+    };
+
+    const handleSavePins = () => {
+        setPinnedIds(tempPinnedIds);
+        localStorage.setItem('pinnedProjects', JSON.stringify(tempPinnedIds));
+        setIsPinDialogOpen(false);
+    };
+
+    const handleCancelPins = () => {
+        setTempPinnedIds([]);
+        setIsPinDialogOpen(false);
+    };
 
     const getLanguageColor = (project: Project): string => {
         const techDetails = project.technicalDetails.join(' ').toLowerCase();
@@ -147,17 +209,23 @@ const ProfileSection = () => {
             <div>
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-[16px] font-semibold text-[#c9d1d9]">Pinned</h2>
-                    <span className="text-xs text-[#58a6ff] cursor-pointer hover:underline">Customize your pins</span>
+                    <button
+                        onClick={handleOpenPinDialog}
+                        className="text-xs text-[#58a6ff] cursor-pointer hover:underline flex items-center gap-1"
+                    >
+                        <Pin size={12} />
+                        Customize your pins
+                    </button>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {pinnedProjects.map((project) => (
-                        <div key={project.id} className="border border-[#30363d] rounded-md p-4 bg-[#0d1117] flex flex-col gap-2">
-                            <div className="flex items-center gap-2 text-[#58a6ff] font-semibold cursor-pointer hover:underline">
+                        <Link href={`/detail/${project.id}`} key={project.id} className="border border-[#30363d] rounded-md p-4 bg-[#0d1117] flex flex-col gap-2 hover:border-[#8b949e] transition-colors">
+                            <div className="flex items-center gap-2 text-[#58a6ff] font-semibold">
                                 <Book size={16} className="text-[#8b949e]" />
-                                <a href={project.codeUrl !== '#' ? project.codeUrl : project.demoUrl} target="_blank" rel="noopener noreferrer">
+                                <span className="hover:underline">
                                     {project.name.toLowerCase().replace(/\s+/g, '-').substring(0, 25)}
-                                </a>
+                                </span>
                                 <span className="border border-[#30363d] rounded-full px-2 text-[10px] text-[#8b949e] font-medium">
                                     {project.type === 'client' ? 'Private' : 'Public'}
                                 </span>
@@ -168,9 +236,9 @@ const ProfileSection = () => {
                                     <span className="w-3 h-3 rounded-full" style={{ backgroundColor: getLanguageColor(project) }}></span>
                                     {getLanguageName(project)}
                                 </div>
-                                <div className="flex items-center gap-1"><GitBranch size={12} /> {Math.floor(Math.random() * 5) + 1}</div>
+                                <div className="flex items-center gap-1"><GitBranch size={12} /> {(Number(project.id) % 5) + 1}</div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -217,14 +285,12 @@ const ProfileSection = () => {
                         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center gap-2 flex-wrap">
-                                    <a
-                                        href={project.codeUrl !== '#' ? project.codeUrl : project.demoUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        href={`/detail/${project.id}`}
                                         className="text-[#58a6ff] font-semibold hover:underline text-lg"
                                     >
                                         {project.name}
-                                    </a>
+                                    </Link>
                                     <span className="border border-[#30363d] rounded-full px-2 py-0.5 text-[10px] text-[#8b949e] font-medium">
                                         {project.type === 'client' ? 'Private' : 'Public'}
                                     </span>
@@ -235,7 +301,7 @@ const ProfileSection = () => {
                                         <span className="w-3 h-3 rounded-full" style={{ backgroundColor: getLanguageColor(project) }}></span>
                                         {getLanguageName(project)}
                                     </div>
-                                    <div className="flex items-center gap-1"><GitBranch size={12} /> {Math.floor(Math.random() * 5) + 1}</div>
+                                    <div className="flex items-center gap-1"><GitBranch size={12} /> {(Number(project.id) % 5) + 1}</div>
                                     <span>Updated recently</span>
                                 </div>
                             </div>
@@ -369,8 +435,8 @@ const ProfileSection = () => {
                         <button
                             onClick={() => setActiveTab('overview')}
                             className={`flex items-center gap-2 px-4 py-2 font-semibold cursor-pointer whitespace-nowrap transition-colors ${activeTab === 'overview'
-                                    ? 'border-b-2 border-[#f78166] text-[#c9d1d9]'
-                                    : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
+                                ? 'border-b-2 border-[#f78166] text-[#c9d1d9]'
+                                : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
                                 }`}
                         >
                             <Book size={16} /> Overview
@@ -378,8 +444,8 @@ const ProfileSection = () => {
                         <button
                             onClick={() => setActiveTab('repositories')}
                             className={`flex items-center gap-2 px-4 py-2 font-semibold cursor-pointer whitespace-nowrap transition-colors ${activeTab === 'repositories'
-                                    ? 'border-b-2 border-[#f78166] text-[#c9d1d9]'
-                                    : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
+                                ? 'border-b-2 border-[#f78166] text-[#c9d1d9]'
+                                : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
                                 }`}
                         >
                             <Package size={16} /> Repositories
@@ -388,8 +454,8 @@ const ProfileSection = () => {
                         <button
                             onClick={() => setActiveTab('projects')}
                             className={`flex items-center gap-2 px-4 py-2 font-semibold cursor-pointer whitespace-nowrap transition-colors ${activeTab === 'projects'
-                                    ? 'border-b-2 border-[#f78166] text-[#c9d1d9]'
-                                    : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
+                                ? 'border-b-2 border-[#f78166] text-[#c9d1d9]'
+                                : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
                                 }`}
                         >
                             <FolderKanban size={16} /> Projects
@@ -402,6 +468,83 @@ const ProfileSection = () => {
                     {activeTab === 'projects' && renderProjectsTab()}
                 </div>
             </div>
+
+            {/* Customize Pins Dialog */}
+            <Dialog open={isPinDialogOpen} onOpenChange={setIsPinDialogOpen}>
+                <DialogContent className="bg-[#161b22] border-[#30363d] text-[#c9d1d9] max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
+                    <DialogHeader>
+                        <DialogTitle className="text-[#c9d1d9] flex items-center gap-2">
+                            <Pin size={18} />
+                            Customize your pinned repositories
+                        </DialogTitle>
+                        <DialogDescription className="text-[#8b949e]">
+                            Select up to 6 repositories to pin to your profile. Drag to reorder.
+                        </DialogDescription>
+                    </DialogHeader>
+
+                    <div className="flex-1 overflow-y-auto pr-2 -mr-2">
+                        <div className="space-y-2">
+                            {sortedProjects.map((project) => {
+                                const isSelected = tempPinnedIds.includes(project.id);
+                                const isDisabled = !isSelected && tempPinnedIds.length >= 6;
+
+                                return (
+                                    <button
+                                        key={project.id}
+                                        onClick={() => handleTogglePin(project.id)}
+                                        disabled={isDisabled}
+                                        className={`w-full flex items-center gap-3 p-3 rounded-md border transition-colors text-left ${isSelected
+                                                ? 'border-[#58a6ff] bg-[#0d1117]'
+                                                : isDisabled
+                                                    ? 'border-[#30363d] bg-[#0d1117] opacity-50 cursor-not-allowed'
+                                                    : 'border-[#30363d] bg-[#0d1117] hover:border-[#8b949e]'
+                                            }`}
+                                    >
+                                        <div className={`w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 ${isSelected
+                                                ? 'bg-[#238636] border-[#238636]'
+                                                : 'border-[#30363d]'
+                                            }`}>
+                                            {isSelected && <Check size={14} className="text-white" />}
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <div className="flex items-center gap-2">
+                                                <Book size={14} className="text-[#8b949e] flex-shrink-0" />
+                                                <span className="text-[#58a6ff] font-medium truncate">{project.name}</span>
+                                                <span className="border border-[#30363d] rounded-full px-2 text-[10px] text-[#8b949e] font-medium flex-shrink-0">
+                                                    {project.type === 'client' ? 'Private' : 'Public'}
+                                                </span>
+                                            </div>
+                                            <p className="text-xs text-[#8b949e] truncate mt-1">{project.details}</p>
+                                        </div>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    <DialogFooter className="border-t border-[#30363d] pt-4 mt-4">
+                        <div className="flex items-center justify-between w-full">
+                            <span className="text-sm text-[#8b949e]">
+                                {tempPinnedIds.length}/6 repositories selected
+                            </span>
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={handleCancelPins}
+                                    className="px-4 py-2 bg-[#21262d] text-[#c9d1d9] rounded-md font-semibold text-sm hover:bg-[#30363d] transition-colors border border-[#30363d]"
+                                >
+                                    Cancel
+                                </button>
+                                <button
+                                    onClick={handleSavePins}
+                                    className="px-4 py-2 bg-[#238636] text-white rounded-md font-semibold text-sm hover:bg-[#2ea043] transition-colors border border-[rgba(240,246,252,0.1)]"
+                                >
+                                    Save pins
+                                </button>
+                            </div>
+                        </div>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     );
 };
