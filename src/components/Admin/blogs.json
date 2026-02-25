@@ -1,0 +1,53 @@
+[
+    {
+        "id": "1",
+        "title": "Building Modern Portfolios with Next.js",
+        "slug": "building-modern-portfolios-nextjs",
+        "excerpt": "A comprehensive guide on creating stunning portfolio websites using Next.js, React, and modern CSS techniques.",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "coverImage": "/blog/nextjs-portfolio.png",
+        "category": "Development",
+        "tags": [
+            "Next.js",
+            "React",
+            "Portfolio"
+        ],
+        "author": "Amrit Bhusal",
+        "publishedAt": "2025-12-15",
+        "isPublished": true
+    },
+    {
+        "id": "2",
+        "title": "The Art of Clean Code in TypeScript",
+        "slug": "clean-code-typescript",
+        "excerpt": "Explore best practices for writing maintainable, scalable TypeScript code with real-world examples.",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.",
+        "coverImage": "/blog/typescript-clean.png",
+        "category": "TypeScript",
+        "tags": [
+            "TypeScript",
+            "Clean Code",
+            "Best Practices"
+        ],
+        "author": "Amrit Bhusal",
+        "publishedAt": "2026-01-10",
+        "isPublished": true
+    },
+    {
+        "id": "3",
+        "title": "Freelancing as a Developer: Lessons Learned",
+        "slug": "freelancing-developer-lessons",
+        "excerpt": "Key insights and tips from my journey as a freelance web developer, covering client management and project delivery.",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.",
+        "coverImage": "/blog/freelancing.png",
+        "category": "Career",
+        "tags": [
+            "Freelancing",
+            "Career",
+            "Tips"
+        ],
+        "author": "Amrit Bhusal",
+        "publishedAt": "2026-02-01",
+        "isPublished": false
+    }
+]

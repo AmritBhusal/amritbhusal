@@ -7,7 +7,7 @@
     "demoUrl": "https://www.gadgetbytenepal.com/",
     "details": "A comprehensive tech news and gadget review platform in Nepal, migrated from WordPress to a modern stack for enhanced performance and scalability.",
     "codeUrl": "#",
-    "role": "Full-Stack Developer",
+    "role": "Frontend Developer",
     "description": "Led the migration of the entire application from WordPress to Next.js, significantly improving performance, scalability, and developer experience. Built a custom admin panel using Laravel to streamline content management and reduce data redundancy, enabling better control over the platform. Implemented frontend caching with Next.js, resulting in a 40% faster page load and reduced server load. Contributed to the UI/UX overhaul, delivering a more modern, intuitive, and responsive interface for users across devices.",
     "technicalDetails": [
       "Migrated the platform from WordPress to Next.js, enhancing performance and scalability.",
@@ -80,7 +80,7 @@
     "description": "Collaborated on the Community Homestay Network platform by addressing frontend bugs, implementing minor UI enhancements, and contributing to API development for improved data handling and user experience.",
     "technicalDetails": [
       "Assisted in debugging and resolving frontend issues to enhance user interaction.",
-      "Implemented minor UI updates to improve navigation and accessibility.",
+      "Implemented UI updates to improve navigation and accessibility.",
       "Contributed to the development and optimization of APIs for better data retrieval and management.",
       "Ensured seamless integration between frontend components and backend services.",
       "Collaborated with the development team to maintain code quality and performance."
@@ -137,7 +137,7 @@
   {
     "id": "16",
     "type": "client",
-    "name": "ITeam - Tech Wholesaler",
+    "name": "ITeam-Tech Wholesaler",
     "image": "/project/community-homestay.png",
     "demoUrl": "https://iteam.com.np/",
     "details": "Nepal's leading tech wholesaler platform, serving as the official dealer for HAVIT, PNY, Huntkey & HP with nationwide product delivery.",

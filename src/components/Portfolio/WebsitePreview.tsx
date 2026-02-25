@@ -74,7 +74,7 @@ const WebsitePreview: React.FC<WebsitePreviewProps> = ({ demoUrl, image, name })
                 >
                     <div
                         className="relative bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden shadow-2xl"
-                        style={{ width: '80vw', height: '80vh' }}
+                        style={{ width: '90vw', height: '90vh' }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Dialog Header */}
