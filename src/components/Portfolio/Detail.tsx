@@ -3,6 +3,7 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
+import WebsitePreview from './WebsitePreview';
 import { BsGithub } from 'react-icons/bs';
 import { SquareArrowOutUpRight, ArrowLeft, Tag, User2, GitBranch, Book, ExternalLink } from 'lucide-react';
 import portfolioData from './portfolio.json';
@@ -156,7 +157,7 @@ const ProjectDetail: React.FC = () => {
             {/* Technical Implementation */}
             <div className="border border-[#30363d] rounded-md bg-[#0d1117]">
               <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22] rounded-t-md">
-                <span className="text-sm text-[#c9d1d9] font-semibold">🛠️ Technical Implementation</span>
+                <span className="text-sm text-[#c9d1d9] font-semibold">Technical Implementation</span>
               </div>
               <div className="p-6">
                 <ul className="space-y-3">
@@ -173,7 +174,7 @@ const ProjectDetail: React.FC = () => {
             {/* Challenges & Solutions */}
             <div className="border border-[#30363d] rounded-md bg-[#0d1117]">
               <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22] rounded-t-md">
-                <span className="text-sm text-[#c9d1d9] font-semibold">🎯 Challenges & Solutions</span>
+                <span className="text-sm text-[#c9d1d9] font-semibold">Challenges & Solutions</span>
               </div>
               <div className="p-6">
                 <ul className="space-y-3">
@@ -193,7 +194,7 @@ const ProjectDetail: React.FC = () => {
             {/* Key Features */}
             <div className="border border-[#30363d] rounded-md bg-[#0d1117]">
               <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22] rounded-t-md">
-                <span className="text-sm text-[#c9d1d9] font-semibold">✨ Key Features</span>
+                <span className="text-sm text-[#c9d1d9] font-semibold">Key Features</span>
               </div>
               <div className="p-4">
                 <ul className="space-y-3">
@@ -209,24 +210,31 @@ const ProjectDetail: React.FC = () => {
 
             {/* Project Image */}
             <div className="border border-[#30363d] rounded-md bg-[#0d1117] overflow-hidden">
-              <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22]">
-                <span className="text-sm text-[#c9d1d9] font-semibold">📸 Preview</span>
+              <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22] flex items-center justify-between">
+                <span className="text-sm text-[#c9d1d9] font-semibold">Preview</span>
+                {project.demoUrl !== '#' && (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs text-[#58a6ff] hover:underline font-medium"
+                  >
+                    <ExternalLink size={12} />
+                    Visit Website
+                  </a>
+                )}
               </div>
-              <div className="relative aspect-video">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
+              <WebsitePreview
+                demoUrl={project.demoUrl}
+                image={project.image}
+                name={project.name}
+              />
             </div>
 
             {/* Quick Links */}
             <div className="border border-[#30363d] rounded-md bg-[#0d1117]">
               <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22] rounded-t-md">
-                <span className="text-sm text-[#c9d1d9] font-semibold">🔗 Links</span>
+                <span className="text-sm text-[#c9d1d9] font-semibold">Links</span>
               </div>
               <div className="p-4 space-y-3">
                 {project.demoUrl !== '#' && (

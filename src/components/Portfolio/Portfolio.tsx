@@ -12,16 +12,14 @@ const Portfolio = () => {
   const [filter, setFilter] = useState<string>("all");
   const [visibleCount, setVisibleCount] = useState<number>(6);
 
-  const sortedProjects = [...portfolioData].sort(
-    (a: any, b: any) => Number(b.id) - Number(a.id)
-  );
+  const sortedProjects = [...portfolioData];
 
   const filteredProjects =
     filter === "all"
       ? sortedProjects
       : sortedProjects.filter(
-          (project: any) => project.type.toLowerCase() === filter.toLowerCase()
-        );
+        (project: any) => project.type.toLowerCase() === filter.toLowerCase()
+      );
 
   const projectsToShow = filteredProjects.slice(0, visibleCount);
   const hasMoreProjects = filteredProjects.length > visibleCount;
@@ -47,9 +45,8 @@ const Portfolio = () => {
           {["all", "client", "personal"].map((type) => (
             <span
               key={type}
-              className={`font-medium text-xl whitespace-nowrap text-center cursor-pointer ${
-                filter === type ? "text-blue-500" : ""
-              }`}
+              className={`font-medium text-xl whitespace-nowrap text-center cursor-pointer ${filter === type ? "text-blue-500" : ""
+                }`}
               onClick={() => handleFilterChange(type)}
             >
               {type === "all"
