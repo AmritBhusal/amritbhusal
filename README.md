@@ -13,7 +13,7 @@ I'm a passionate **Frontend Engineer** with Knowledge in **Web3 technologies** a
 
 - 🔭 Currently working as **Freelancer**.
 - 🌱 Expanding my skills in **React** and **React Native**
-- 💼 Over 2 years of experience in web development
+- 💼 Over 3 years of experience in web development
 - 🏆 Committed to writing clean, maintainable, and efficient code
 - 🔍 Strong focus on creating seamless user experiences
 - 🌐 Passionate about blockchain technology and decentralized systems
