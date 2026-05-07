@@ -19,9 +19,9 @@ const ProfileSidebar = () => {
                         priority
                     />
                 </div>
-                {/* Status Icon */}
-                <div className="absolute bottom-10 right-0 md:right-4 bg-[#21262d] p-2 rounded-full border border-[#30363d] shadow-sm cursor-pointer hover:text-[#58a6ff] transition-colors">
-                    <div className="w-5 h-5 flex items-center justify-center">🎯</div>
+                {/* Open to Work Badge */}
+                <div className="absolute bottom-8 -right-1 md:right-2 bg-[#21262d] px-3 py-1.5 rounded-full border border-[#58a6ff] shadow-lg cursor-pointer hover:bg-[#30363d] transition-colors items-center text-center flex">
+                    <span className="text-xs font-semibold text-[#58a6ff] whitespace-nowrap">Open to Work</span>
                 </div>
             </div>
 

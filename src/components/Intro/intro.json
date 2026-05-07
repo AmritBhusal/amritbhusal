@@ -1,9 +1,11 @@
 {
   "greeting": "Hello,",
   "name": "Amrit Bhusal",
-  "role": "Frontend Developer",
-  "ctaHeading": "Need a Website? Let’s Build It Together!",
-  "ctaDescription": "I create modern, responsive websites using React, Next.js, HTML, and CSS.",
+  "role": "Frontend Engineer",
+  "tagline": "I help startups and businesses build high-performance web applications that convert users into customers.",
+  "ctaHeading": "Let's Build Something Great Together",
+  "ctaDescription": "Frontend Engineer building fast, scalable SaaS, eCommerce, and business platforms with Next.js & React.",
+  "trustLine": "3+ years experience • 20+ projects shipped • Production apps serving thousands of users",
   "socialLinks": {
     "github": "https://github.com/AmritBhusal",
     "facebook": "https://www.facebook.com/profile.php?id=61554990321890",

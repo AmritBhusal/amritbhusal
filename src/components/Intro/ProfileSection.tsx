@@ -18,7 +18,9 @@ const ProfileSection = () => {
             <div className="flex flex-col md:flex-row gap-8">
 
                 {/* Left Sidebar - Profile Info */}
-                <ProfileSidebar />
+                <div className="md:sticky md:top-4 md:self-start">
+                    <ProfileSidebar />
+                </div>
 
                 {/* Right Content - Tabs and Content */}
                 <div className="flex-1 min-w-0">
@@ -50,7 +52,7 @@ const ProfileSection = () => {
                                 : 'hover:bg-[#161b22] rounded-t-md text-[#8b949e]'
                                 }`}
                         >
-                            <FolderKanban size={16} /> Projects
+                            <FolderKanban size={16} /> Contact
                         </button>
                     </div>
 

@@ -4,8 +4,8 @@ import Footer from "@/components/Layout/Footer";
 import { Toaster } from "@/components/ui/toaster";
 
 const siteUrl = "https://amritbhusal1.com.np";
-const siteName = "Amrit Bhusal - Frontend Developer";
-const siteDescription = "As a front-end developer from Nepal, I specialize in React, Next.js, TypeScript, JavaScript and Tailwind CSS. My portfolio showcases responsive and dynamic web applications that highlight my expertise in creating user-centric designs and writing clean, efficient code.";
+const siteName = "Amrit Bhusal - Frontend Engineer | React & Next.js";
+const siteDescription = "Frontend Engineer based in Nepal helping startups and businesses build high-performance web applications with React, Next.js, and TypeScript. 3+ years experience delivering scalable SaaS, eCommerce, and business platforms that convert users into customers.";
 
 export const metadata: Metadata = {
   // Basic metadata
@@ -19,22 +19,22 @@ export const metadata: Metadata = {
   generator: "Next.js",
   keywords: [
     "Amrit Bhusal",
-    "Frontend Developer",
+    "Frontend Engineer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
     "JavaScript Developer",
     "Web Developer Nepal",
     "Lalitpur Developer",
-    "Tailwind CSS",
-    "UI/UX Developer",
-    "Portfolio",
-    "Freelance Developer Nepal",
-    "React.js",
-    "Next.js Portfolio",
-    "Modern Web Development",
-    "Responsive Design",
-    "Web Applications",
+    "Freelance Frontend Developer",
+    "Hire React Developer Nepal",
+    "SaaS Developer",
+    "eCommerce Developer",
+    "Startup MVP Developer",
+    "Frontend Performance Optimization",
+    "Scalable Web Applications",
+    "Figma to Code",
+    "Core Web Vitals",
   ],
   referrer: "origin-when-cross-origin",
   creator: "Amrit Bhusal",
@@ -144,7 +144,7 @@ const jsonLd = {
     "https://www.facebook.com/profile.php?id=61554990321890",
     "https://www.instagram.com/bhusalamrit14/",
   ],
-  jobTitle: "Frontend Developer",
+  jobTitle: "Frontend Engineer",
   worksFor: {
     "@type": "Organization",
     name: "Freelance",
@@ -161,11 +161,13 @@ const jsonLd = {
     "TypeScript",
     "JavaScript",
     "Tailwind CSS",
-    "HTML5",
-    "CSS3",
-    "Web Development",
-    "Frontend Development",
-    "Responsive Design",
+    "SaaS Development",
+    "eCommerce Development",
+    "Frontend Performance Optimization",
+    "Core Web Vitals",
+    "Scalable Web Applications",
+    "Figma to Code",
+    "SSR/SSG",
   ],
 };
 

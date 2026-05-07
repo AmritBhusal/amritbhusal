@@ -49,6 +49,9 @@ const ProjectDetail: React.FC = () => {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const impact = (project as any).impact as { challenge: string; solution: string; results: string[] } | undefined;
+
   const getLanguageColor = (): string => {
     const techDetails = project.technicalDetails.join(' ').toLowerCase();
     if (techDetails.includes('typescript') || techDetails.includes('next.js')) return '#3178c6';
@@ -153,6 +156,36 @@ const ProjectDetail: React.FC = () => {
                 <p className="text-[#8b949e] leading-relaxed">{project.description}</p>
               </div>
             </div>
+
+            {/* Business Impact Section */}
+            {impact && (
+                <div className="border border-[#30363d] rounded-md bg-[#0d1117]">
+                  <div className="px-4 py-3 border-b border-[#30363d] bg-[#161b22] rounded-t-md">
+                    <span className="text-sm text-[#c9d1d9] font-semibold">📊 Business Impact</span>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#f78166] uppercase tracking-wider mb-2">Challenge</h4>
+                      <p className="text-[#c9d1d9] text-sm leading-relaxed">{impact.challenge}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#58a6ff] uppercase tracking-wider mb-2">Solution</h4>
+                      <p className="text-[#c9d1d9] text-sm leading-relaxed">{impact.solution}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#238636] uppercase tracking-wider mb-2">Results</h4>
+                      <ul className="space-y-2">
+                        {impact.results.map((result: string, index: number) => (
+                          <li key={index} className="flex items-start gap-3 text-[#c9d1d9] text-sm">
+                            <span className="text-[#238636] mt-0.5">✓</span>
+                            <span>{result}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            )}
 
             {/* Technical Implementation */}
             <div className="border border-[#30363d] rounded-md bg-[#0d1117]">
