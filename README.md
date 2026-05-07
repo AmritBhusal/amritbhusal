@@ -11,9 +11,9 @@
 
 I'm a passionate **Frontend Engineer** with Knowledge in **Web3 technologies** and **Blockchain development**. I love building intuitive, responsive user interfaces and decentralized applications that solve real-world problems.
 
-- 🔭 Currently working at [Quark Infotech](https://quarkinfotech.com/)
+- 🔭 Currently working as **Freelancer**.
 - 🌱 Expanding my skills in **React** and **React Native**
-- 💼 Over 2 years of experience in web development
+- 💼 Over 3 years of experience in web development
 - 🏆 Committed to writing clean, maintainable, and efficient code
 - 🔍 Strong focus on creating seamless user experiences
 - 🌐 Passionate about blockchain technology and decentralized systems
