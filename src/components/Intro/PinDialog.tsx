@@ -51,14 +51,14 @@ const PinDialog: React.FC<PinDialogProps> = ({ isOpen, onOpenChange, pinnedIds, 
 
     return (
         <Dialog open={isOpen} onOpenChange={handleOpen}>
-            <DialogContent className="bg-[#161b22] border-[#30363d] text-[#c9d1d9] max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
+            <DialogContent className="bg-[#221d17] border-[#3a3128] text-[#ebdbb2] max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
                 <DialogHeader>
-                    <DialogTitle className="text-[#c9d1d9] flex items-center gap-2">
+                    <DialogTitle className="text-[#ebdbb2] flex items-center gap-2">
                         <Pin size={18} />
                         Customize your pinned repositories
                     </DialogTitle>
-                    <DialogDescription className="text-[#8b949e]">
-                        Select up to 6 repositories to pin to your profile. Drag to reorder.
+                    <DialogDescription className="text-[#a89984]">
+                        Select up to 6 repositories to pin to your profile.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -74,27 +74,27 @@ const PinDialog: React.FC<PinDialogProps> = ({ isOpen, onOpenChange, pinnedIds, 
                                     onClick={() => handleTogglePin(project.id)}
                                     disabled={isDisabled}
                                     className={`w-full flex items-center gap-3 p-3 rounded-md border transition-colors text-left ${isSelected
-                                        ? 'border-[#58a6ff] bg-[#0d1117]'
+                                        ? 'border-[#1793d1] bg-[#1b1712]'
                                         : isDisabled
-                                            ? 'border-[#30363d] bg-[#0d1117] opacity-50 cursor-not-allowed'
-                                            : 'border-[#30363d] bg-[#0d1117] hover:border-[#8b949e]'
+                                            ? 'border-[#3a3128] bg-[#1b1712] opacity-50 cursor-not-allowed'
+                                            : 'border-[#3a3128] bg-[#1b1712] hover:border-[#a89984]'
                                         }`}
                                 >
                                     <div className={`w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 ${isSelected
                                         ? 'bg-[#238636] border-[#238636]'
-                                        : 'border-[#30363d]'
+                                        : 'border-[#3a3128]'
                                         }`}>
                                         {isSelected && <Check size={14} className="text-white" />}
                                     </div>
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                            <Book size={14} className="text-[#8b949e] flex-shrink-0" />
-                                            <span className="text-[#58a6ff] font-medium truncate">{project.name}</span>
-                                            <span className="border border-[#30363d] rounded-full px-2 text-[10px] text-[#8b949e] font-medium flex-shrink-0">
+                                            <Book size={14} className="text-[#a89984] flex-shrink-0" />
+                                            <span className="text-[#1793d1] font-medium truncate">{project.name}</span>
+                                            <span className="border border-[#3a3128] rounded-full px-2 text-[10px] text-[#a89984] font-medium flex-shrink-0">
                                                 {project.type === 'client' ? 'Private' : 'Public'}
                                             </span>
                                         </div>
-                                        <p className="text-xs text-[#8b949e] truncate mt-1">{project.details}</p>
+                                        <p className="text-xs text-[#a89984] truncate mt-1">{project.details}</p>
                                     </div>
                                 </button>
                             );
@@ -102,15 +102,15 @@ const PinDialog: React.FC<PinDialogProps> = ({ isOpen, onOpenChange, pinnedIds, 
                     </div>
                 </div>
 
-                <DialogFooter className="border-t border-[#30363d] pt-4 mt-4">
+                <DialogFooter className="border-t border-[#3a3128] pt-4 mt-4">
                     <div className="flex items-center justify-between w-full">
-                        <span className="text-sm text-[#8b949e]">
+                        <span className="text-sm text-[#a89984]">
                             {tempPinnedIds.length}/6 repositories selected
                         </span>
                         <div className="flex gap-2">
                             <button
                                 onClick={handleCancel}
-                                className="px-4 py-2 bg-[#21262d] text-[#c9d1d9] rounded-md font-semibold text-sm hover:bg-[#30363d] transition-colors border border-[#30363d]"
+                                className="px-4 py-2 bg-[#2b241b] text-[#ebdbb2] rounded-md font-semibold text-sm hover:bg-[#3a3128] transition-colors border border-[#3a3128]"
                             >
                                 Cancel
                             </button>

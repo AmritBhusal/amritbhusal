@@ -1,7 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
 import { Toaster } from "@/components/ui/toaster";
+
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 const siteUrl = "https://amritbhusal1.com.np";
 const siteName = "Amrit Bhusal - Frontend Engineer | React & Next.js";
@@ -107,13 +113,6 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
 
-  // Verification for search engines (add your actual verification codes)
-  verification: {
-    google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
-  },
-
   // Category
   category: "technology",
 };
@@ -121,8 +120,8 @@ export const metadata: Metadata = {
 // Viewport configuration
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0d1117" },
-    { media: "(prefers-color-scheme: dark)", color: "#0d1117" },
+    { media: "(prefers-color-scheme: light)", color: "#1b1712" },
+    { media: "(prefers-color-scheme: dark)", color: "#1b1712" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -177,7 +176,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${sans.variable} ${display.variable} ${mono.variable}`}>
       <head>
         {/* JSON-LD Structured Data */}
         <script
@@ -189,7 +188,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        <main>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground focus:font-semibold"
+        >
+          Skip to content
+        </a>
+        <Navbar />
+        <main id="main-content">
           {children}
           <Toaster />
         </main>

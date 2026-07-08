@@ -85,38 +85,38 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
             {/* README Section */}
             <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs text-[#8b949e]">AmritBhusal / README.md</span>
+                    <span className="text-xs text-[#a89984]">AmritBhusal / README.md</span>
                 </div>
-                <div className="border border-[#30363d] rounded-md bg-[#0d1117] p-6 lg:p-10">
-                    <h2 className="text-3xl font-bold border-b border-[#30363d] pb-2 mb-6 text-[#c9d1d9]">
+                <div className="border border-[#3a3128] rounded-md bg-[#1b1712] p-6 lg:p-10">
+                    <h2 className="text-3xl font-bold border-b border-[#3a3128] pb-2 mb-6 text-[#ebdbb2]">
                         Hi there 👋, I&apos;m {introData.name}
                     </h2>
 
-                    <div className="space-y-4 text-[#c9d1d9]">
+                    <div className="space-y-4 text-[#ebdbb2]">
                         <p className="text-lg">
-                            <span className="font-semibold text-[#58a6ff]">{introData.role}</span> — {introData.ctaDescription}
+                            <span className="font-semibold text-[#1793d1]">{introData.role}</span> — {introData.ctaDescription}
                         </p>
 
-                        <p className="text-[#8b949e] text-sm">
+                        <p className="text-[#a89984] text-sm">
                             {introData.tagline}
                         </p>
 
                         {/* Trust Line */}
                         <div className="flex items-center gap-2 py-2">
-                            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#161b22] border border-[#30363d] rounded-full text-sm text-[#58a6ff] font-medium">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#221d17] border border-[#3a3128] rounded-full text-sm text-[#1793d1] font-medium">
                                     {introData.trustLine}
                             </span>
                         </div>
 
                         <div className="py-4">
                             <h3 className="text-xl font-bold mb-3">About Me</h3>
-                            <p className="text-[#8b949e] leading-relaxed">
+                            <p className="text-[#a89984] leading-relaxed">
                                 {aboutData.description}
                             </p>
                         </div>
 
                         {/* Stats Section */}
-                        <div className="py-4 border-t border-[#30363d]">
+                        <div className="py-4 border-t border-[#3a3128]">
                             <h3 className="text-xl font-bold mb-4">📊 Impact & Numbers</h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                                 {stats.map((stat, index) => {
@@ -124,11 +124,11 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                                     return (
                                         <div
                                             key={index}
-                                            className="flex flex-col items-center gap-2 p-4 bg-[#161b22] border border-[#30363d] rounded-md hover:border-[#58a6ff] transition-colors"
+                                            className="flex flex-col items-center gap-2 p-4 bg-[#221d17] border border-[#3a3128] rounded-md hover:border-[#1793d1] transition-colors"
                                         >
-                                            <IconComponent size={20} className="text-[#58a6ff]" />
-                                            <span className="text-2xl font-bold text-[#c9d1d9]">{stat.value}</span>
-                                            <span className="text-xs text-[#8b949e] text-center">{stat.label}</span>
+                                            <IconComponent size={20} className="text-[#1793d1]" />
+                                            <span className="text-2xl font-bold text-[#ebdbb2]">{stat.value}</span>
+                                            <span className="text-xs text-[#a89984] text-center">{stat.label}</span>
                                         </div>
                                     );
                                 })}
@@ -136,22 +136,22 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                         </div>
 
                         {/* Categorized Skills & Technologies */}
-                        <div className="py-4 border-t border-[#30363d]">
+                        <div className="py-4 border-t border-[#3a3128]">
                             <h3 className="text-xl font-bold mb-4">🛠️ Core Expertise</h3>
                             <div className="space-y-4">
                                 {skillCategories.map((category, catIndex) => (
                                     <div key={catIndex}>
-                                        <h4 className="text-sm font-semibold text-[#8b949e] mb-2 uppercase tracking-wider">{category.title}</h4>
+                                        <h4 className="text-sm font-semibold text-[#a89984] mb-2 uppercase tracking-wider">{category.title}</h4>
                                         <div className="flex flex-wrap gap-3">
                                             {category.skills.map((tech, index) => {
                                                 const IconComponent = tech.icon;
                                                 return (
                                                     <div
                                                         key={index}
-                                                        className="flex items-center gap-2 px-3 py-2 bg-[#21262d] border border-[#30363d] rounded-md hover:bg-[#30363d] transition-colors"
+                                                        className="flex items-center gap-2 px-3 py-2 bg-[#2b241b] border border-[#3a3128] rounded-md hover:bg-[#3a3128] transition-colors"
                                                     >
                                                         <IconComponent size={18} style={{ color: tech.color }} />
-                                                        <span className="text-sm text-[#c9d1d9]">{tech.name}</span>
+                                                        <span className="text-sm text-[#ebdbb2]">{tech.name}</span>
                                                     </div>
                                                 );
                                             })}
@@ -162,7 +162,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                         </div>
 
                         {/* Services Section */}
-                        <div className="py-4 border-t border-[#30363d]">
+                        <div className="py-4 border-t border-[#3a3128]">
                             <h3 className="text-xl font-bold mb-4">💼 Services I Offer</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 {services.map((service, index) => {
@@ -170,13 +170,13 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                                     return (
                                         <div
                                             key={index}
-                                            className="p-4 bg-[#161b22] border border-[#30363d] rounded-md hover:border-[#58a6ff] transition-colors"
+                                            className="p-4 bg-[#221d17] border border-[#3a3128] rounded-md hover:border-[#1793d1] transition-colors"
                                         >
                                             <div className="flex items-center gap-2 mb-2">
-                                                <IconComponent size={18} className="text-[#58a6ff]" />
-                                                <h4 className="font-semibold text-[#c9d1d9]">{service.title}</h4>
+                                                <IconComponent size={18} className="text-[#1793d1]" />
+                                                <h4 className="font-semibold text-[#ebdbb2]">{service.title}</h4>
                                             </div>
-                                            <p className="text-sm text-[#8b949e]">{service.description}</p>
+                                            <p className="text-sm text-[#a89984]">{service.description}</p>
                                         </div>
                                     );
                                 })}
@@ -184,7 +184,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-3 pt-4 border-t border-[#30363d]">
+                        <div className="flex flex-wrap gap-3 pt-4 border-t border-[#3a3128]">
                             {/* <button
                                 onClick={() => onNavigate('repositories')}
                                 className="px-4 py-2 bg-[#238636] text-white rounded-md font-semibold text-sm hover:bg-[#2ea043] transition-colors border border-[rgba(240,246,252,0.1)]"
@@ -193,7 +193,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                             </button> */}
                             <button
                                 onClick={() => onNavigate('projects')}
-                                className="px-4 py-2 bg-[#21262d] text-[#58a6ff] rounded-md font-semibold text-sm hover:bg-[#30363d] transition-colors border border-[#30363d]"
+                                className="px-4 py-2 bg-[#2b241b] text-[#1793d1] rounded-md font-semibold text-sm hover:bg-[#3a3128] transition-colors border border-[#3a3128]"
                             >
                                 Hire Me
                             </button>
@@ -201,7 +201,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                                 href={introData.socialLinks.whatsapp}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-4 py-2 bg-[#21262d] text-[#c9d1d9] rounded-md font-semibold text-sm hover:bg-[#30363d] transition-colors border border-[#30363d]"
+                                className="flex items-center gap-2 px-4 py-2 bg-[#2b241b] text-[#ebdbb2] rounded-md font-semibold text-sm hover:bg-[#3a3128] transition-colors border border-[#3a3128]"
                             >
                                 <Calendar size={14} />
                                 Book Discovery Call
@@ -209,7 +209,7 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
                             <a
                                 href={introData.resume}
                                 download
-                                className="px-4 py-2 bg-[#21262d] text-[#8b949e] rounded-md font-semibold text-sm hover:bg-[#30363d] transition-colors border border-[#30363d]"
+                                className="px-4 py-2 bg-[#2b241b] text-[#a89984] rounded-md font-semibold text-sm hover:bg-[#3a3128] transition-colors border border-[#3a3128]"
                             >
                                 Download Resume
                             </a>
@@ -217,14 +217,14 @@ const OverviewTab: React.FC<OverviewTabProps> = ({ onNavigate }) => {
 
                         {/* Quick Contact Links */}
                         <div className="flex items-center gap-3 pt-2">
-                            <span className="text-xs text-[#8b949e]">Quick reach:</span>
-                            <a href={introData.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-[#8b949e] hover:text-[#25d366] transition-colors">
+                            <span className="text-xs text-[#a89984]">Quick reach:</span>
+                            <a href={introData.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-[#a89984] hover:text-[#25d366] transition-colors">
                                 <FaWhatsapp size={16} />
                             </a>
-                            <a href={introData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#8b949e] hover:text-[#0a66c2] transition-colors">
+                            <a href={introData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#a89984] hover:text-[#0a66c2] transition-colors">
                                 <FaLinkedin size={16} />
                             </a>
-                            <a href="mailto:bhusalamrit41@gmail.com" className="text-[#8b949e] hover:text-[#58a6ff] transition-colors">
+                            <a href="mailto:bhusalamrit41@gmail.com" className="text-[#a89984] hover:text-[#1793d1] transition-colors">
                                 <Mail size={16} />
                             </a>
                         </div>

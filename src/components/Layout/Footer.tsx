@@ -2,9 +2,14 @@
 
 import { Mail } from 'lucide-react';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  // Admin has its own chrome — no public footer there.
+  if (pathname?.startsWith('/admin')) return null;
 
   const socialLinks = [
     {
@@ -31,11 +36,13 @@ const Footer = () => {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center space-y-8">
-          {/* Inspiring Message */}
-          <div className="bg-muted/30 backdrop-blur-sm px-6 py-4 rounded-none border border-border">
-            <p className="text-muted-foreground text-center max-w-2xl text-lg">
-              Turn your dreams into reality through the power of technology and innovation.
-            </p>
+          {/* Inspiring Message — terminal styled */}
+          <div className="rounded-md border border-border bg-[#221d17] px-6 py-4 font-mono text-sm shadow-lg shadow-black/30">
+            <span className="text-term-green">[amrit@arch ~]$</span>{' '}
+            <span className="text-[#a89984]">echo </span>
+            <span className="text-[#fbf1c7]">
+              &quot;Turn your dreams into reality through the power of tech.&quot;
+            </span>
           </div>
 
           {/* Social Media Links */}
@@ -46,10 +53,13 @@ const Footer = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-all duration-200"
+                className="group flex flex-col items-center gap-1 text-muted-foreground transition-transform duration-200 hover:-translate-y-1 hover:text-primary"
                 aria-label={link.label}
               >
                 {link.icon}
+                <span className="text-[10px] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                  {link.label}
+                </span>
               </a>
             ))}
           </div>

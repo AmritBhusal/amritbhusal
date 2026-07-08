@@ -69,14 +69,14 @@ const AdminPage = () => {
         : '';
 
     return (
-        <div className="w-full min-h-screen bg-[#0d1117]">
+        <div className="w-full min-h-screen bg-[#1b1712]">
             {/* Top Nav */}
-            <div className="sticky top-0 z-10 bg-[#161b22] border-b border-[#30363d] backdrop-blur-md bg-opacity-80">
+            <div className="sticky top-0 z-10 bg-[#221d17] border-b border-[#3a3128] backdrop-blur-md bg-opacity-80">
                 <div className="max-w-6xl mx-auto px-6 py-3 flex items-center gap-3">
-                    <FolderKanban size={20} className="text-[#58a6ff]" />
-                    <span className="text-sm font-semibold text-[#e6edf3]">Portfolio Admin</span>
-                    <span className="text-xs text-[#484f58]">•</span>
-                    <span className="text-xs text-[#8b949e]">
+                    <FolderKanban size={20} className="text-[#1793d1]" />
+                    <span className="text-sm font-semibold text-[#fbf1c7]">Portfolio Admin</span>
+                    <span className="text-xs text-[#7c6f5a]">•</span>
+                    <span className="text-xs text-[#a89984]">
                         {view === 'list' ? 'Dashboard' : view === 'create' ? 'New Project' : `Editing: ${editingProject?.name}`}
                     </span>
                 </div>
@@ -107,20 +107,20 @@ const AdminPage = () => {
 
             {/* Delete Confirmation Dialog */}
             <Dialog open={!!deleteTarget} onOpenChange={(open) => !open && setDeleteTarget(null)}>
-                <DialogContent className="bg-[#161b22] border-[#30363d] text-[#e6edf3] max-w-md">
+                <DialogContent className="bg-[#221d17] border-[#3a3128] text-[#fbf1c7] max-w-md">
                     <DialogHeader>
-                        <DialogTitle className="text-[#e6edf3] flex items-center gap-2">
+                        <DialogTitle className="text-[#fbf1c7] flex items-center gap-2">
                             <AlertTriangle size={20} className="text-[#f85149]" />
                             Delete Project
                         </DialogTitle>
-                        <DialogDescription className="text-[#8b949e]">
-                            Are you sure you want to delete <strong className="text-[#e6edf3]">{deleteProjectName}</strong>? This action cannot be undone.
+                        <DialogDescription className="text-[#a89984]">
+                            Are you sure you want to delete <strong className="text-[#fbf1c7]">{deleteProjectName}</strong>? This action cannot be undone.
                         </DialogDescription>
                     </DialogHeader>
                     <DialogFooter className="flex gap-2 pt-4">
                         <button
                             onClick={() => setDeleteTarget(null)}
-                            className="px-4 py-2 text-sm font-medium text-[#8b949e] hover:text-[#e6edf3] bg-[#21262d] hover:bg-[#30363d] border border-[#30363d] rounded-lg transition-all"
+                            className="px-4 py-2 text-sm font-medium text-[#a89984] hover:text-[#fbf1c7] bg-[#2b241b] hover:bg-[#3a3128] border border-[#3a3128] rounded-lg transition-all"
                         >
                             Cancel
                         </button>

@@ -60,8 +60,8 @@ const SortableRow: React.FC<SortableRowProps> = ({ project, onEdit, onDelete, is
             ref={setNodeRef}
             style={style}
             className={`group grid grid-cols-1 md:grid-cols-[36px_1fr_140px_140px_100px] gap-3 md:gap-4 px-5 py-4 transition-colors ${isDragging
-                ? 'bg-[#1c2128] border border-[#58a6ff]/30 rounded-lg shadow-xl shadow-[#58a6ff]/5'
-                : 'hover:bg-[#161b22]/60'
+                ? 'bg-[#1c2128] border border-[#1793d1]/30 rounded-lg shadow-xl shadow-[#1793d1]/5'
+                : 'hover:bg-[#221d17]/60'
                 }`}
         >
             {/* Drag Handle */}
@@ -70,7 +70,7 @@ const SortableRow: React.FC<SortableRowProps> = ({ project, onEdit, onDelete, is
                     <button
                         {...attributes}
                         {...listeners}
-                        className="p-1 text-[#30363d] hover:text-[#8b949e] cursor-grab active:cursor-grabbing rounded transition-colors"
+                        className="p-1 text-[#3a3128] hover:text-[#a89984] cursor-grab active:cursor-grabbing rounded transition-colors"
                         title="Drag to reorder"
                     >
                         <GripVertical size={16} />
@@ -81,25 +81,25 @@ const SortableRow: React.FC<SortableRowProps> = ({ project, onEdit, onDelete, is
             {/* Project Info */}
             <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-[#484f58] font-mono">#{project.id}</span>
-                    <h3 className="text-[#58a6ff] font-semibold truncate">{project.name}</h3>
+                    <span className="text-xs text-[#7c6f5a] font-mono">#{project.id}</span>
+                    <h3 className="text-[#1793d1] font-semibold truncate">{project.name}</h3>
                     {project.demoUrl !== '#' && (
                         <a
                             href={project.demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-[#484f58] hover:text-[#58a6ff] transition-colors flex-shrink-0"
+                            className="text-[#7c6f5a] hover:text-[#1793d1] transition-colors flex-shrink-0"
                         >
                             <Globe size={14} />
                         </a>
                     )}
                 </div>
-                <p className="text-xs text-[#8b949e] line-clamp-1">{project.details}</p>
+                <p className="text-xs text-[#a89984] line-clamp-1">{project.details}</p>
             </div>
 
             {/* Role */}
             <div className="flex items-center">
-                <span className="text-xs text-[#8b949e] bg-[#21262d] px-2.5 py-1 rounded-full border border-[#30363d]">
+                <span className="text-xs text-[#a89984] bg-[#2b241b] px-2.5 py-1 rounded-full border border-[#3a3128]">
                     {project.role}
                 </span>
             </div>
@@ -121,7 +121,7 @@ const SortableRow: React.FC<SortableRowProps> = ({ project, onEdit, onDelete, is
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-[#484f58] hover:text-[#58a6ff] hover:bg-[#21262d] rounded-md transition-all"
+                        className="p-2 text-[#7c6f5a] hover:text-[#1793d1] hover:bg-[#2b241b] rounded-md transition-all"
                         title="Preview"
                     >
                         <ExternalLink size={15} />
@@ -129,14 +129,14 @@ const SortableRow: React.FC<SortableRowProps> = ({ project, onEdit, onDelete, is
                 )}
                 <button
                     onClick={() => onEdit(project)}
-                    className="p-2 text-[#484f58] hover:text-[#e6edf3] hover:bg-[#21262d] rounded-md transition-all"
+                    className="p-2 text-[#7c6f5a] hover:text-[#fbf1c7] hover:bg-[#2b241b] rounded-md transition-all"
                     title="Edit"
                 >
                     <Pencil size={15} />
                 </button>
                 <button
                     onClick={() => onDelete(project.id)}
-                    className="p-2 text-[#484f58] hover:text-[#f85149] hover:bg-[#f85149]/10 rounded-md transition-all"
+                    className="p-2 text-[#7c6f5a] hover:text-[#f85149] hover:bg-[#f85149]/10 rounded-md transition-all"
                     title="Delete"
                 >
                     <Trash2 size={15} />
@@ -192,8 +192,8 @@ const ProjectList: React.FC<ProjectListProps> = ({
             {/* Header */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-[#e6edf3]">Projects</h1>
-                    <p className="text-sm text-[#8b949e] mt-1">{projects.length} projects total · Drag to reorder</p>
+                    <h1 className="text-2xl font-bold text-[#fbf1c7]">Projects</h1>
+                    <p className="text-sm text-[#a89984] mt-1">{projects.length} projects total · Drag to reorder</p>
                 </div>
                 <button
                     onClick={onCreateNew}
@@ -206,20 +206,20 @@ const ProjectList: React.FC<ProjectListProps> = ({
 
             {/* Search Bar */}
             <div className="relative">
-                <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#484f58]" />
+                <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#7c6f5a]" />
                 <input
                     type="text"
                     placeholder="Search projects by name, description, or role..."
                     value={searchQuery}
                     onChange={(e) => onSearchChange(e.target.value)}
-                    className="w-full pl-11 pr-4 py-3 bg-[#161b22] border border-[#30363d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/30 transition-all"
+                    className="w-full pl-11 pr-4 py-3 bg-[#221d17] border border-[#3a3128] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/30 transition-all"
                 />
             </div>
 
             {/* Project Table */}
-            <div className="border border-[#30363d] rounded-lg overflow-hidden bg-[#0d1117]">
+            <div className="border border-[#3a3128] rounded-lg overflow-hidden bg-[#1b1712]">
                 {/* Table Header */}
-                <div className="hidden md:grid grid-cols-[36px_1fr_140px_140px_100px] gap-4 px-5 py-3 bg-[#161b22] border-b border-[#30363d] text-xs font-semibold text-[#8b949e] uppercase tracking-wider">
+                <div className="hidden md:grid grid-cols-[36px_1fr_140px_140px_100px] gap-4 px-5 py-3 bg-[#221d17] border-b border-[#3a3128] text-xs font-semibold text-[#a89984] uppercase tracking-wider">
                     <span></span>
                     <span>Project</span>
                     <span>Role</span>
@@ -229,7 +229,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
 
                 {/* Project Rows */}
                 {filteredProjects.length === 0 ? (
-                    <div className="py-16 text-center text-[#484f58]">
+                    <div className="py-16 text-center text-[#7c6f5a]">
                         <p className="text-lg">No projects found</p>
                         <p className="text-sm mt-1">Try a different search term</p>
                     </div>
@@ -243,7 +243,7 @@ const ProjectList: React.FC<ProjectListProps> = ({
                             items={filteredProjects.map(p => p.id)}
                             strategy={verticalListSortingStrategy}
                         >
-                            <div className="divide-y divide-[#21262d]">
+                            <div className="divide-y divide-[#2b241b]">
                                 {filteredProjects.map((project) => (
                                     <SortableRow
                                         key={project.id}

@@ -114,22 +114,22 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
         <div className="space-y-4">
             <div className="flex items-center justify-between">
                 <div>
-                    <h2 className="text-lg font-semibold text-[#e6edf3]">{label}</h2>
-                    <p className="text-sm text-[#8b949e] mt-0.5">{description}</p>
+                    <h2 className="text-lg font-semibold text-[#fbf1c7]">{label}</h2>
+                    <p className="text-sm text-[#a89984] mt-0.5">{description}</p>
                 </div>
                 <button
                     type="button"
                     onClick={() => addArrayItem(field)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 bg-[#21262d] text-xs text-[#58a6ff] hover:text-[#79c0ff] rounded-lg border border-[#30363d] transition-all"
+                    className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2b241b] text-xs text-[#1793d1] hover:text-[#79c0ff] rounded-lg border border-[#3a3128] transition-all"
                 >
                     <Plus size={14} />
                     Add Item
                 </button>
             </div>
-            <div className="space-y-3 p-6 bg-[#0d1117] rounded-xl border border-[#21262d]">
+            <div className="space-y-3 p-6 bg-[#1b1712] rounded-xl border border-[#2b241b]">
                 {formData[field].map((item, index) => (
-                    <div key={index} className="flex gap-2 group bg-[#161b22] border border-[#30363d] rounded-lg p-1 pr-2 focus-within:border-[#58a6ff] transition-all">
-                        <div className="flex items-center justify-center w-8 text-xs text-[#484f58] font-mono flex-shrink-0">
+                    <div key={index} className="flex gap-2 group bg-[#221d17] border border-[#3a3128] rounded-lg p-1 pr-2 focus-within:border-[#1793d1] transition-all">
+                        <div className="flex items-center justify-center w-8 text-xs text-[#7c6f5a] font-mono flex-shrink-0">
                             {index + 1}.
                         </div>
                         <input
@@ -137,13 +137,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                             value={item}
                             onChange={(e) => updateArrayItem(field, index, e.target.value)}
                             placeholder={placeholder}
-                            className="flex-1 bg-transparent py-2.5 text-[#e6edf3] text-sm focus:outline-none placeholder-[#484f58]"
+                            className="flex-1 bg-transparent py-2.5 text-[#fbf1c7] text-sm focus:outline-none placeholder-[#7c6f5a]"
                         />
                         {formData[field].length > 1 && (
                             <button
                                 type="button"
                                 onClick={() => removeArrayItem(field, index)}
-                                className="p-1.5 text-[#484f58] hover:text-[#f85149] rounded-md transition-all opacity-0 group-hover:opacity-100 flex-shrink-0"
+                                className="p-1.5 text-[#7c6f5a] hover:text-[#f85149] rounded-md transition-all opacity-0 group-hover:opacity-100 flex-shrink-0"
                             >
                                 <X size={16} />
                             </button>
@@ -162,15 +162,15 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                     <button
                         type="button"
                         onClick={onCancel}
-                        className="p-2 text-[#8b949e] hover:text-[#e6edf3] hover:bg-[#21262d] rounded-lg transition-all"
+                        className="p-2 text-[#a89984] hover:text-[#fbf1c7] hover:bg-[#2b241b] rounded-lg transition-all"
                     >
                         <ArrowLeft size={20} />
                     </button>
                     <div>
-                        <h1 className="text-2xl font-bold text-[#e6edf3]">
+                        <h1 className="text-2xl font-bold text-[#fbf1c7]">
                             {isEditing ? 'Edit Project' : 'Create Project'}
                         </h1>
-                        <p className="text-sm text-[#8b949e] mt-0.5">
+                        <p className="text-sm text-[#a89984] mt-0.5">
                             {isEditing ? `Editing "${formData.name}"` : 'Add a new project to your portfolio'}
                         </p>
                     </div>
@@ -185,15 +185,15 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex items-center gap-1 border-b border-[#30363d] overflow-x-auto no-scrollbar pt-2">
+            <div className="flex items-center gap-1 border-b border-[#3a3128] overflow-x-auto no-scrollbar pt-2">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
                         type="button"
                         onClick={() => setActiveTab(tab.id)}
                         className={`flex items-center gap-2 px-6 py-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${activeTab === tab.id
-                                ? 'border-[#f78166] text-[#e6edf3]'
-                                : 'border-transparent text-[#8b949e] hover:text-[#e6edf3] hover:border-[#484f58]'
+                                ? 'border-[#1793d1] text-[#fbf1c7]'
+                                : 'border-transparent text-[#a89984] hover:text-[#fbf1c7] hover:border-[#7c6f5a]'
                             }`}
                     >
                         {tab.icon}
@@ -208,33 +208,33 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Project Name <span className="text-[#f85149]">*</span></label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Project Name <span className="text-[#f85149]">*</span></label>
                                 <input
                                     type="text"
                                     value={formData.name}
                                     onChange={(e) => updateField('name', e.target.value)}
                                     placeholder="e.g. My Awesome Project"
                                     required
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Type</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Type</label>
                                 <select
                                     value={formData.type}
                                     onChange={(e) => updateField('type', e.target.value)}
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 >
                                     <option value="Personal">Personal</option>
                                     <option value="client">Client</option>
                                 </select>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Role</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Role</label>
                                 <select
                                     value={formData.role}
                                     onChange={(e) => updateField('role', e.target.value)}
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 >
                                     <option value="Frontend Developer">Frontend Developer</option>
                                     <option value="Full-Stack Developer">Full-Stack Developer</option>
@@ -244,34 +244,34 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                                 </select>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Demo URL</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Demo URL</label>
                                 <input
                                     type="text"
                                     value={formData.demoUrl}
                                     onChange={(e) => updateField('demoUrl', e.target.value)}
                                     placeholder="https://example.com"
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                             <div className="space-y-2 md:col-span-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Code URL</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Code URL</label>
                                 <input
                                     type="text"
                                     value={formData.codeUrl}
                                     onChange={(e) => updateField('codeUrl', e.target.value)}
                                     placeholder="https://github.com/..."
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                         </div>
 
                         {/* Image Upload */}
                         <div className="space-y-3">
-                            <label className="text-sm font-medium text-[#e6edf3]">Project Image</label>
+                            <label className="text-sm font-medium text-[#fbf1c7]">Project Image</label>
                             <div className="flex flex-col md:flex-row gap-6">
                                 <div
                                     onClick={() => fileInputRef.current?.click()}
-                                    className="flex-1 border-2 border-dashed border-[#30363d] rounded-xl p-8 text-center cursor-pointer hover:border-[#58a6ff]/50 hover:bg-[#58a6ff]/5 transition-all group"
+                                    className="flex-1 border-2 border-dashed border-[#3a3128] rounded-xl p-8 text-center cursor-pointer hover:border-[#1793d1]/50 hover:bg-[#1793d1]/5 transition-all group"
                                 >
                                     <input
                                         ref={fileInputRef}
@@ -280,13 +280,13 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                                         onChange={handleImageUpload}
                                         className="hidden"
                                     />
-                                    <Upload size={32} className="mx-auto mb-3 text-[#484f58] group-hover:text-[#58a6ff] transition-colors" />
-                                    <p className="text-sm text-[#e6edf3] font-medium">Click to upload project image</p>
-                                    <p className="text-xs text-[#8b949e] mt-1">PNG, JPG, WebP up to 5MB</p>
+                                    <Upload size={32} className="mx-auto mb-3 text-[#7c6f5a] group-hover:text-[#1793d1] transition-colors" />
+                                    <p className="text-sm text-[#fbf1c7] font-medium">Click to upload project image</p>
+                                    <p className="text-xs text-[#a89984] mt-1">PNG, JPG, WebP up to 5MB</p>
                                 </div>
 
                                 {imagePreview && (
-                                    <div className="relative w-full md:w-80 h-48 rounded-xl overflow-hidden border border-[#30363d] bg-[#0d1117] flex-shrink-0 group">
+                                    <div className="relative w-full md:w-80 h-48 rounded-xl overflow-hidden border border-[#3a3128] bg-[#1b1712] flex-shrink-0 group">
                                         <Image src={imagePreview} alt="Preview" fill className="object-cover" />
                                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                             <button
@@ -310,25 +310,25 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                 {activeTab === 'description' && (
                     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-[#e6edf3]">Short Description <span className="text-[#f85149]">*</span></label>
+                            <label className="text-sm font-medium text-[#fbf1c7]">Short Description <span className="text-[#f85149]">*</span></label>
                             <input
                                 type="text"
                                 value={formData.details}
                                 onChange={(e) => updateField('details', e.target.value)}
                                 placeholder="A brief one-liner about the project"
                                 required
-                                className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                             />
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-[#e6edf3]">Full Description <span className="text-[#f85149]">*</span></label>
+                            <label className="text-sm font-medium text-[#fbf1c7]">Full Description <span className="text-[#f85149]">*</span></label>
                             <textarea
                                 value={formData.description}
                                 onChange={(e) => updateField('description', e.target.value)}
                                 placeholder="Detailed description of the project..."
                                 rows={10}
                                 required
-                                className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all resize-none min-h-[250px]"
+                                className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all resize-none min-h-[250px]"
                             />
                         </div>
                     </div>
@@ -357,11 +357,11 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
             </div>
 
             {/* Bottom Actions */}
-            <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#30363d]">
+            <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#3a3128]">
                 <button
                     type="button"
                     onClick={onCancel}
-                    className="w-full sm:w-auto px-6 py-2.5 text-sm font-medium text-[#8b949e] hover:text-[#e6edf3] bg-[#21262d] hover:bg-[#30363d] border border-[#30363d] rounded-lg transition-all"
+                    className="w-full sm:w-auto px-6 py-2.5 text-sm font-medium text-[#a89984] hover:text-[#fbf1c7] bg-[#2b241b] hover:bg-[#3a3128] border border-[#3a3128] rounded-lg transition-all"
                 >
                     Cancel
                 </button>
@@ -374,7 +374,7 @@ const ProjectForm: React.FC<ProjectFormProps> = ({ project, onSave, onCancel, ne
                                 const currentIndex = tabOrder.indexOf(activeTab);
                                 setActiveTab(tabOrder[currentIndex + 1]);
                             }}
-                            className="w-full sm:w-auto px-6 py-2.5 bg-[#21262d] text-[#e6edf3] text-sm font-semibold rounded-lg border border-[#30363d] hover:bg-[#30363d] transition-all"
+                            className="w-full sm:w-auto px-6 py-2.5 bg-[#2b241b] text-[#fbf1c7] text-sm font-semibold rounded-lg border border-[#3a3128] hover:bg-[#3a3128] transition-all"
                         >
                             Next Step
                         </button>

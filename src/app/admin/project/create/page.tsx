@@ -29,18 +29,18 @@ const CreateProjectPage = () => {
     };
 
     return (
-        <div className="w-full min-h-screen bg-[#0d1117]">
-            <div className="sticky top-0 z-10 bg-[#161b22] border-b border-[#30363d] backdrop-blur-md bg-opacity-80">
+        <div className="w-full min-h-screen bg-[#1b1712]">
+            <div className="sticky top-0 z-10 bg-[#221d17] border-b border-[#3a3128] backdrop-blur-md bg-opacity-80">
                 <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <FolderKanban size={20} className="text-[#58a6ff]" />
-                        <span className="text-sm font-semibold text-[#e6edf3]">Portfolio Admin</span>
-                        <span className="text-xs text-[#484f58]">•</span>
-                        <span className="text-xs text-[#8b949e]">New Project</span>
+                        <FolderKanban size={20} className="text-[#1793d1]" />
+                        <span className="text-sm font-semibold text-[#fbf1c7]">Portfolio Admin</span>
+                        <span className="text-xs text-[#7c6f5a]">•</span>
+                        <span className="text-xs text-[#a89984]">New Project</span>
                     </div>
                     <button
                         onClick={handleLogout}
-                        className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#8b949e] hover:text-[#f85149] hover:bg-[#f85149]/10 rounded-md transition-all"
+                        className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#a89984] hover:text-[#f85149] hover:bg-[#f85149]/10 rounded-md transition-all"
                     >
                         <LogOut size={14} />
                         Sign out

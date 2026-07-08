@@ -89,7 +89,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
     ];
 
     return (
-        <div className="flex flex-wrap gap-1 p-2 border-b border-[#30363d] bg-[#1c2128]">
+        <div className="flex flex-wrap gap-1 p-2 border-b border-[#3a3128] bg-[#1c2128]">
             <input
                 ref={fileInputRef}
                 type="file"
@@ -99,7 +99,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
             />
             {buttons.map((btn, i) => (
                 btn.type === 'divider' ? (
-                    <div key={i} className="w-[1px] h-6 bg-[#30363d] mx-1 my-auto" />
+                    <div key={i} className="w-[1px] h-6 bg-[#3a3128] mx-1 my-auto" />
                 ) : (
                     <button
                         key={i}
@@ -107,7 +107,7 @@ const MenuBar = ({ editor }: { editor: any }) => {
                         onClick={btn.action}
                         className={`p-1.5 rounded transition-all ${btn.active && editor.isActive(btn.active)
                             ? 'bg-[#238636] text-white'
-                            : 'text-[#8b949e] hover:bg-[#30363d] hover:text-[#e6edf3]'
+                            : 'text-[#a89984] hover:bg-[#3a3128] hover:text-[#fbf1c7]'
                             }`}
                     >
                         {btn.icon}
@@ -128,12 +128,12 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
             Link.configure({
                 openOnClick: false,
                 HTMLAttributes: {
-                    class: 'text-[#58a6ff] hover:underline cursor-pointer',
+                    class: 'text-[#1793d1] hover:underline cursor-pointer',
                 },
             }),
             Image.configure({
                 HTMLAttributes: {
-                    class: 'rounded-lg border border-[#30363d] max-w-full h-auto my-4',
+                    class: 'rounded-lg border border-[#3a3128] max-w-full h-auto my-4',
                 },
             }),
             Placeholder.configure({
@@ -146,7 +146,7 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
                 lowlight,
                 defaultLanguage: 'javascript',
                 HTMLAttributes: {
-                    class: 'rounded-lg bg-[#0d1117] p-4 font-mono text-sm border border-[#30363d] my-4',
+                    class: 'rounded-lg bg-[#1b1712] p-4 font-mono text-sm border border-[#3a3128] my-4',
                 },
             }),
         ],
@@ -158,27 +158,27 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
         },
         editorProps: {
             attributes: {
-                class: 'prose prose-invert max-w-none focus:outline-none min-h-[300px] px-4 py-3 text-[#e6edf3] text-sm selection:bg-[#58a6ff]/30',
+                class: 'prose prose-invert max-w-none focus:outline-none min-h-[300px] px-4 py-3 text-[#fbf1c7] text-sm selection:bg-[#1793d1]/30',
             },
         },
     });
 
     return (
-        <div className="border border-[#30363d] rounded-lg bg-[#0d1117] overflow-hidden">
+        <div className="border border-[#3a3128] rounded-lg bg-[#1b1712] overflow-hidden">
             <MenuBar editor={editor} />
             <EditorContent editor={editor} />
             <style jsx global>{`
                 .tiptap p.is-editor-empty:first-child::before {
                     content: attr(data-placeholder);
                     float: left;
-                    color: #484f58;
+                    color: #7c6f5a;
                     pointer-events: none;
                     height: 0;
                 }
                 .tiptap blockquote {
                     padding-left: 1rem;
-                    border-left: 3px solid #30363d;
-                    color: #8b949e;
+                    border-left: 3px solid #3a3128;
+                    color: #a89984;
                     font-style: italic;
                     margin: 1.5rem 0;
                 }
@@ -196,7 +196,7 @@ const RichTextEditor = ({ content, onChange, placeholder }: RichTextEditorProps)
                 .tiptap h2 { font-size: 1.5rem; font-weight: 600; margin: 1.5rem 0 1rem; }
 
                 /* Code highlighting colors (matching GitHub dark) */
-                .hljs-comment, .hljs-quote { color: #8b949e; font-style: italic; }
+                .hljs-comment, .hljs-quote { color: #a89984; font-style: italic; }
                 .hljs-keyword, .hljs-selector-tag { color: #ff7b72; }
                 .hljs-string, .hljs-doctag, .hljs-template-variable { color: #a5d6ff; }
                 .hljs-title, .hljs-section, .hljs-selector-id { color: #d2a8ff; font-weight: bold; }

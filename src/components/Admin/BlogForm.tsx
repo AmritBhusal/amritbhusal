@@ -8,7 +8,7 @@ import { BlogPost } from './blogTypes';
 
 const RichTextEditor = dynamic(() => import('./RichTextEditor'), {
     ssr: false,
-    loading: () => <div className="h-[300px] w-full bg-[#0d1117] border border-[#30363d] rounded-lg animate-pulse flex items-center justify-center text-[#484f58]">Loading editor...</div>
+    loading: () => <div className="h-[300px] w-full bg-[#1b1712] border border-[#3a3128] rounded-lg animate-pulse flex items-center justify-center text-[#7c6f5a]">Loading editor...</div>
 });
 
 interface BlogFormProps {
@@ -118,26 +118,26 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                     <button
                         type="button"
                         onClick={onCancel}
-                        className="p-2 text-[#8b949e] hover:text-[#e6edf3] hover:bg-[#21262d] rounded-lg transition-all"
+                        className="p-2 text-[#a89984] hover:text-[#fbf1c7] hover:bg-[#2b241b] rounded-lg transition-all"
                     >
                         <ArrowLeft size={20} />
                     </button>
                     <div>
-                        <h1 className="text-2xl font-bold text-[#e6edf3]">
+                        <h1 className="text-2xl font-bold text-[#fbf1c7]">
                             {isEditing ? 'Edit Post' : 'Create Post'}
                         </h1>
-                        <p className="text-sm text-[#8b949e] mt-0.5">
+                        <p className="text-sm text-[#a89984] mt-0.5">
                             {isEditing ? `Editing "${formData.title}"` : 'Add a new blog post'}
                         </p>
                     </div>
                 </div>
                 <div className="flex items-center gap-3">
-                    <label className="flex items-center gap-2 text-sm text-[#8b949e] cursor-pointer bg-[#21262d] px-3 py-2 rounded-lg border border-[#30363d] hover:border-[#484f58] transition-all">
+                    <label className="flex items-center gap-2 text-sm text-[#a89984] cursor-pointer bg-[#2b241b] px-3 py-2 rounded-lg border border-[#3a3128] hover:border-[#7c6f5a] transition-all">
                         <input
                             type="checkbox"
                             checked={formData.isPublished}
                             onChange={(e) => updateField('isPublished', e.target.checked)}
-                            className="rounded border-[#30363d] bg-[#0d1117] text-[#238636] focus:ring-[#238636]/20"
+                            className="rounded border-[#3a3128] bg-[#1b1712] text-[#238636] focus:ring-[#238636]/20"
                         />
                         <span>Publish Status</span>
                     </label>
@@ -152,15 +152,15 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex items-center gap-1 border-b border-[#30363d] overflow-x-auto no-scrollbar pt-2">
+            <div className="flex items-center gap-1 border-b border-[#3a3128] overflow-x-auto no-scrollbar pt-2">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
                         type="button"
                         onClick={() => setActiveTab(tab.id)}
                         className={`flex items-center gap-2 px-6 py-3 text-sm font-medium border-b-2 transition-all whitespace-nowrap ${activeTab === tab.id
-                                ? 'border-[#f78166] text-[#e6edf3]'
-                                : 'border-transparent text-[#8b949e] hover:text-[#e6edf3] hover:border-[#484f58]'
+                                ? 'border-[#1793d1] text-[#fbf1c7]'
+                                : 'border-transparent text-[#a89984] hover:text-[#fbf1c7] hover:border-[#7c6f5a]'
                             }`}
                     >
                         {tab.icon}
@@ -175,32 +175,32 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Title <span className="text-[#f85149]">*</span></label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Title <span className="text-[#f85149]">*</span></label>
                                 <input
                                     type="text"
                                     value={formData.title}
                                     onChange={(e) => updateField('title', e.target.value)}
                                     placeholder="e.g. Building Modern Portfolios"
                                     required
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Slug</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Slug</label>
                                 <input
                                     type="text"
                                     value={formData.slug}
                                     onChange={(e) => updateField('slug', e.target.value)}
                                     placeholder="building-modern-portfolios"
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm font-mono placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm font-mono placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Category</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Category</label>
                                 <select
                                     value={formData.category}
                                     onChange={(e) => updateField('category', e.target.value)}
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 >
                                     {CATEGORIES.map(cat => (
                                         <option key={cat} value={cat}>{cat}</option>
@@ -208,33 +208,33 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                                 </select>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Author</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Author</label>
                                 <input
                                     type="text"
                                     value={formData.author}
                                     onChange={(e) => updateField('author', e.target.value)}
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-[#e6edf3]">Publish Date</label>
+                                <label className="text-sm font-medium text-[#fbf1c7]">Publish Date</label>
                                 <input
                                     type="date"
                                     value={formData.publishedAt}
                                     onChange={(e) => updateField('publishedAt', e.target.value)}
-                                    className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                                    className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                                 />
                             </div>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-[#e6edf3]">Excerpt <span className="text-[#f85149]">*</span></label>
+                            <label className="text-sm font-medium text-[#fbf1c7]">Excerpt <span className="text-[#f85149]">*</span></label>
                             <textarea
                                 value={formData.excerpt}
                                 onChange={(e) => updateField('excerpt', e.target.value)}
                                 placeholder="A brief summary that appears in blog listings..."
                                 rows={3}
                                 required
-                                className="w-full px-3 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all resize-none"
+                                className="w-full px-3 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all resize-none"
                             />
                         </div>
                     </div>
@@ -243,8 +243,8 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                 {activeTab === 'content' && (
                     <div className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         <div className="flex items-center justify-between">
-                            <label className="text-sm font-medium text-[#e6edf3]">Content <span className="text-[#f85149]">*</span></label>
-                            <span className="text-xs text-[#8b949e]">Supports Rich Text & Images</span>
+                            <label className="text-sm font-medium text-[#fbf1c7]">Content <span className="text-[#f85149]">*</span></label>
+                            <span className="text-xs text-[#a89984]">Supports Rich Text & Images</span>
                         </div>
                         <RichTextEditor
                             content={formData.content}
@@ -258,11 +258,11 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         {/* Cover Image */}
                         <div className="space-y-3">
-                            <label className="text-sm font-medium text-[#e6edf3]">Cover Image</label>
+                            <label className="text-sm font-medium text-[#fbf1c7]">Cover Image</label>
                             <div className="flex flex-col md:flex-row gap-6">
                                 <div
                                     onClick={() => fileInputRef.current?.click()}
-                                    className="flex-1 border-2 border-dashed border-[#30363d] rounded-xl p-8 text-center cursor-pointer hover:border-[#58a6ff]/50 hover:bg-[#58a6ff]/5 transition-all group"
+                                    className="flex-1 border-2 border-dashed border-[#3a3128] rounded-xl p-8 text-center cursor-pointer hover:border-[#1793d1]/50 hover:bg-[#1793d1]/5 transition-all group"
                                 >
                                     <input
                                         ref={fileInputRef}
@@ -271,13 +271,13 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                                         onChange={handleImageUpload}
                                         className="hidden"
                                     />
-                                    <Upload size={32} className="mx-auto mb-3 text-[#484f58] group-hover:text-[#58a6ff] transition-colors" />
-                                    <p className="text-sm text-[#e6edf3] font-medium">Click to upload cover image</p>
-                                    <p className="text-xs text-[#8b949e] mt-1">PNG, JPG, WebP up to 5MB</p>
+                                    <Upload size={32} className="mx-auto mb-3 text-[#7c6f5a] group-hover:text-[#1793d1] transition-colors" />
+                                    <p className="text-sm text-[#fbf1c7] font-medium">Click to upload cover image</p>
+                                    <p className="text-xs text-[#a89984] mt-1">PNG, JPG, WebP up to 5MB</p>
                                 </div>
 
                                 {imagePreview && (
-                                    <div className="relative w-full md:w-80 h-48 rounded-xl overflow-hidden border border-[#30363d] bg-[#0d1117] flex-shrink-0 group">
+                                    <div className="relative w-full md:w-80 h-48 rounded-xl overflow-hidden border border-[#3a3128] bg-[#1b1712] flex-shrink-0 group">
                                         <Image src={imagePreview} alt="Cover preview" fill className="object-cover" />
                                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                             <button
@@ -294,42 +294,42 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                         </div>
 
                         {/* Tags */}
-                        <div className="space-y-4 pt-6 border-t border-[#30363d]">
+                        <div className="space-y-4 pt-6 border-t border-[#3a3128]">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <label className="text-sm font-medium text-[#e6edf3]">Post Tags</label>
-                                    <p className="text-xs text-[#8b949e] mt-0.5">Add relevant tags to help users find your content</p>
+                                    <label className="text-sm font-medium text-[#fbf1c7]">Post Tags</label>
+                                    <p className="text-xs text-[#a89984] mt-0.5">Add relevant tags to help users find your content</p>
                                 </div>
                                 <button
                                     type="button"
                                     onClick={addTag}
-                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-[#21262d] text-xs text-[#58a6ff] hover:text-[#79c0ff] rounded-lg border border-[#30363d] transition-all"
+                                    className="flex items-center gap-1.5 px-3 py-1.5 bg-[#2b241b] text-xs text-[#1793d1] hover:text-[#79c0ff] rounded-lg border border-[#3a3128] transition-all"
                                 >
                                     <Plus size={14} />
                                     Add Tag
                                 </button>
                             </div>
-                            <div className="flex flex-wrap gap-3 p-4 bg-[#0d1117] rounded-xl border border-[#21262d]">
+                            <div className="flex flex-wrap gap-3 p-4 bg-[#1b1712] rounded-xl border border-[#2b241b]">
                                 {formData.tags.map((tag, index) => (
-                                    <div key={index} className="flex items-center gap-2 group bg-[#161b22] border border-[#30363d] rounded-lg px-2 py-1.5 focus-within:border-[#58a6ff] transition-all">
+                                    <div key={index} className="flex items-center gap-2 group bg-[#221d17] border border-[#3a3128] rounded-lg px-2 py-1.5 focus-within:border-[#1793d1] transition-all">
                                         <input
                                             type="text"
                                             value={tag}
                                             onChange={(e) => updateTag(index, e.target.value)}
                                             placeholder="Tag name"
-                                            className="w-24 bg-transparent text-[#e6edf3] text-xs focus:outline-none"
+                                            className="w-24 bg-transparent text-[#fbf1c7] text-xs focus:outline-none"
                                         />
                                         <button
                                             type="button"
                                             onClick={() => removeTag(index)}
-                                            className="text-[#484f58] hover:text-[#f85149] transition-colors"
+                                            className="text-[#7c6f5a] hover:text-[#f85149] transition-colors"
                                         >
                                             <X size={14} />
                                         </button>
                                     </div>
                                 ))}
                                 {formData.tags.length === 0 && (
-                                    <p className="text-xs text-[#484f58] italic py-1">No tags added yet</p>
+                                    <p className="text-xs text-[#7c6f5a] italic py-1">No tags added yet</p>
                                 )}
                             </div>
                         </div>
@@ -338,11 +338,11 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
             </div>
 
             {/* Bottom Actions - Fixed on Mobile or separate from tabs */}
-            <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#30363d]">
+            <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 pt-6 border-t border-[#3a3128]">
                 <button
                     type="button"
                     onClick={onCancel}
-                    className="w-full sm:w-auto px-6 py-2.5 text-sm font-medium text-[#8b949e] hover:text-[#e6edf3] bg-[#21262d] hover:bg-[#30363d] border border-[#30363d] rounded-lg transition-all"
+                    className="w-full sm:w-auto px-6 py-2.5 text-sm font-medium text-[#a89984] hover:text-[#fbf1c7] bg-[#2b241b] hover:bg-[#3a3128] border border-[#3a3128] rounded-lg transition-all"
                 >
                     Cancel
                 </button>
@@ -351,7 +351,7 @@ const BlogForm: React.FC<BlogFormProps> = ({ blog, onSave, onCancel, nextId }) =
                         <button
                             type="button"
                             onClick={() => setActiveTab(activeTab === 'details' ? 'content' : 'media')}
-                            className="w-full sm:w-auto px-6 py-2.5 bg-[#21262d] text-[#e6edf3] text-sm font-semibold rounded-lg border border-[#30363d] hover:bg-[#30363d] transition-all"
+                            className="w-full sm:w-auto px-6 py-2.5 bg-[#2b241b] text-[#fbf1c7] text-sm font-semibold rounded-lg border border-[#3a3128] hover:bg-[#3a3128] transition-all"
                         >
                             Next Step
                         </button>

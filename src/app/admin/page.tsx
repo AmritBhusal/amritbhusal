@@ -73,17 +73,17 @@ const DashboardContent = () => {
         : '';
 
     return (
-        <div className="w-full min-h-screen bg-[#0d1117]">
+        <div className="w-full min-h-screen bg-[#1b1712]">
             {/* Top Nav */}
-            <div className="sticky top-0 z-10 bg-[#161b22] border-b border-[#30363d] backdrop-blur-md bg-opacity-80">
+            <div className="sticky top-0 z-10 bg-[#221d17] border-b border-[#3a3128] backdrop-blur-md bg-opacity-80">
                 <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <FolderKanban size={20} className="text-[#58a6ff]" />
-                        <span className="text-sm font-semibold text-[#e6edf3]">Portfolio Admin</span>
+                        <FolderKanban size={20} className="text-[#1793d1]" />
+                        <span className="text-sm font-semibold text-[#fbf1c7]">Portfolio Admin</span>
                     </div>
                     <button
                         onClick={handleLogout}
-                        className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#8b949e] hover:text-[#f85149] hover:bg-[#f85149]/10 rounded-md transition-all"
+                        className="flex items-center gap-2 px-3 py-1.5 text-xs text-[#a89984] hover:text-[#f85149] hover:bg-[#f85149]/10 rounded-md transition-all"
                     >
                         <LogOut size={14} />
                         Sign out
@@ -92,30 +92,30 @@ const DashboardContent = () => {
             </div>
 
             {/* Tab Navigation */}
-            <div className="border-b border-[#30363d] bg-[#0d1117]">
+            <div className="border-b border-[#3a3128] bg-[#1b1712]">
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="flex gap-1">
                         <button
                             onClick={() => handleTabChange('projects')}
                             className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all ${activeTab === 'projects'
-                                ? 'text-[#e6edf3] border-[#f78166]'
-                                : 'text-[#8b949e] border-transparent hover:text-[#e6edf3] hover:border-[#30363d]'
+                                ? 'text-[#fbf1c7] border-[#1793d1]'
+                                : 'text-[#a89984] border-transparent hover:text-[#fbf1c7] hover:border-[#3a3128]'
                                 }`}
                         >
                             <Layers size={16} />
                             Projects
-                            <span className="text-xs px-2 py-0.5 rounded-full bg-[#21262d] border border-[#30363d]">{projects.length}</span>
+                            <span className="text-xs px-2 py-0.5 rounded-full bg-[#2b241b] border border-[#3a3128]">{projects.length}</span>
                         </button>
                         <button
                             onClick={() => handleTabChange('blogs')}
                             className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all ${activeTab === 'blogs'
-                                ? 'text-[#e6edf3] border-[#f78166]'
-                                : 'text-[#8b949e] border-transparent hover:text-[#e6edf3] hover:border-[#30363d]'
+                                ? 'text-[#fbf1c7] border-[#1793d1]'
+                                : 'text-[#a89984] border-transparent hover:text-[#fbf1c7] hover:border-[#3a3128]'
                                 }`}
                         >
                             <FileText size={16} />
                             Blogs
-                            <span className="text-xs px-2 py-0.5 rounded-full bg-[#21262d] border border-[#30363d]">{blogs.length}</span>
+                            <span className="text-xs px-2 py-0.5 rounded-full bg-[#2b241b] border border-[#3a3128]">{blogs.length}</span>
                         </button>
                     </div>
                 </div>
@@ -149,20 +149,20 @@ const DashboardContent = () => {
 
             {/* Delete Confirmation Dialog */}
             <Dialog open={!!deleteTarget} onOpenChange={(open: boolean) => !open && setDeleteTarget(null)}>
-                <DialogContent className="bg-[#161b22] border-[#30363d] text-[#e6edf3] max-w-md">
+                <DialogContent className="bg-[#221d17] border-[#3a3128] text-[#fbf1c7] max-w-md">
                     <DialogHeader>
-                        <DialogTitle className="text-[#e6edf3] flex items-center gap-2">
+                        <DialogTitle className="text-[#fbf1c7] flex items-center gap-2">
                             <AlertTriangle size={20} className="text-[#f85149]" />
                             Delete {deleteTarget?.type === 'project' ? 'Project' : 'Post'}
                         </DialogTitle>
-                        <DialogDescription className="text-[#8b949e]">
-                            Are you sure you want to delete <strong className="text-[#e6edf3]">{deleteName}</strong>? This action cannot be undone.
+                        <DialogDescription className="text-[#a89984]">
+                            Are you sure you want to delete <strong className="text-[#fbf1c7]">{deleteName}</strong>? This action cannot be undone.
                         </DialogDescription>
                     </DialogHeader>
                     <DialogFooter className="flex gap-2 pt-4">
                         <button
                             onClick={() => setDeleteTarget(null)}
-                            className="px-4 py-2 text-sm font-medium text-[#8b949e] hover:text-[#e6edf3] bg-[#21262d] hover:bg-[#30363d] border border-[#30363d] rounded-lg transition-all"
+                            className="px-4 py-2 text-sm font-medium text-[#a89984] hover:text-[#fbf1c7] bg-[#2b241b] hover:bg-[#3a3128] border border-[#3a3128] rounded-lg transition-all"
                         >
                             Cancel
                         </button>
@@ -180,7 +180,7 @@ const DashboardContent = () => {
 };
 
 const AdminDashboard = () => (
-    <Suspense fallback={<div className="min-h-screen bg-[#0d1117] flex items-center justify-center text-[#8b949e]">Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-[#1b1712] flex items-center justify-center text-[#a89984]">Loading...</div>}>
         <DashboardContent />
     </Suspense>
 );

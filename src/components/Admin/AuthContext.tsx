@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface AuthContextType {
     isAuthenticated: boolean;
@@ -16,13 +17,23 @@ const AUTH_KEY = 'portfolio_admin_auth';
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [checked, setChecked] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
 
+    // Client-side route guard (static export has no server for middleware/proxy)
     useEffect(() => {
-        const token = localStorage.getItem(AUTH_KEY);
-        if (token === 'authenticated') {
-            setIsAuthenticated(true);
+        const authed = localStorage.getItem(AUTH_KEY) === 'authenticated';
+        setIsAuthenticated(authed);
+        setChecked(true);
+        if (!authed && pathname !== '/admin/login') {
+            router.replace(`/admin/login?from=${encodeURIComponent(pathname)}`);
         }
-    }, []);
+    }, [pathname, router]);
+
+    // Block protected content until the auth check runs
+    if (!checked && pathname !== '/admin/login') return null;
+    if (!isAuthenticated && pathname !== '/admin/login') return null;
 
     const login = (email: string, password: string): boolean => {
         if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {

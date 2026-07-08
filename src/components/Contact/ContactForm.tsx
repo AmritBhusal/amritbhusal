@@ -19,7 +19,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/hooks/use-toast";
-import { Send, User, Mail, Phone, MessageCircle } from "lucide-react";
+import { Send, User, Mail, Phone, MessageCircle, Briefcase } from "lucide-react";
 import taskData from "./Form.json";
 
 const formSchema = z.object({
@@ -66,7 +66,7 @@ export default function ContactForm() {
         from_email: values.email,
         contact_number: values.contact,
         selected_service: taskName,
-        total_amount: `$${totalAmount.toLocaleString()}`,
+        total_amount: `Rs. ${totalAmount.toLocaleString()}`,
         message: values.message,
         to_name: "Amrit Bhusal",
       };
@@ -103,18 +103,18 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-[#0d1117] py-8 px-4">
+    <div className="bg-[#1b1712] py-8 px-4">
       <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-[#0d1117] rounded-md border border-[#30363d]">
-          <div className="bg-[#161b22] px-8 py-8 text-[#c9d1d9] relative overflow-hidden border-b border-[#30363d] rounded-t-md">
+        <div className="bg-[#1b1712] rounded-md border border-[#3a3128]">
+          <div className="bg-[#221d17] px-8 py-8 text-[#ebdbb2] relative overflow-hidden border-b border-[#3a3128] rounded-t-md">
             <div className="relative z-10 text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-[#21262d] rounded-full mb-4 border border-[#30363d]">
-                <MessageCircle size={28} className="text-[#8b949e]" />
+              <div className="inline-flex items-center justify-center w-14 h-14 bg-[#2b241b] rounded-full mb-4 border border-[#3a3128]">
+                <MessageCircle size={28} className="text-[#a89984]" />
               </div>
-              <h2 className="text-2xl font-bold mb-2 tracking-tight text-[#c9d1d9]">
+              <h2 className="text-2xl font-bold mb-2 tracking-tight text-[#ebdbb2]">
                 Get In Touch
               </h2>
-              <p className="text-[#8b949e] text-base max-w-2xl mx-auto leading-relaxed">
+              <p className="text-[#a89984] text-base max-w-2xl mx-auto leading-relaxed">
                 Ready to bring your ideas to life? Let's discuss your project
                 requirements and create something amazing together.
               </p>
@@ -133,15 +133,15 @@ export default function ContactForm() {
                     name="name"
                     render={({ field }) => (
                       <FormItem className="space-y-2">
-                        <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
-                          <User size={16} className="text-[#8b949e]" />
+                        <FormLabel className="text-[#ebdbb2] font-medium flex items-center gap-2 text-sm">
+                          <User size={16} className="text-[#a89984]" />
                           Full Name
                         </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="Enter your full name"
                             {...field}
-                            className="h-10 border-[#30363d] focus:border-[#58a6ff] rounded-md transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
+                            className="h-10 border-[#3a3128] focus:border-[#1793d1] focus:shadow-[0_0_0_3px_rgba(23,147,209,0.15)] rounded-md transition-all duration-200 bg-[#1b1712] hover:bg-[#221d17] focus:bg-[#1b1712] text-[#ebdbb2] placeholder-[#a89984]"
                           />
                         </FormControl>
                         <FormMessage className="text-[#f85149]" />
@@ -154,8 +154,8 @@ export default function ContactForm() {
                     name="email"
                     render={({ field }) => (
                       <FormItem className="space-y-2">
-                        <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
-                          <Mail size={16} className="text-[#8b949e]" />
+                        <FormLabel className="text-[#ebdbb2] font-medium flex items-center gap-2 text-sm">
+                          <Mail size={16} className="text-[#a89984]" />
                           Email Address
                         </FormLabel>
                         <FormControl>
@@ -163,7 +163,7 @@ export default function ContactForm() {
                             placeholder="your.email@example.com"
                             type="email"
                             {...field}
-                            className="h-10 border-[#30363d] focus:border-[#58a6ff] rounded-md transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
+                            className="h-10 border-[#3a3128] focus:border-[#1793d1] focus:shadow-[0_0_0_3px_rgba(23,147,209,0.15)] rounded-md transition-all duration-200 bg-[#1b1712] hover:bg-[#221d17] focus:bg-[#1b1712] text-[#ebdbb2] placeholder-[#a89984]"
                           />
                         </FormControl>
                         <FormMessage className="text-[#f85149]" />
@@ -178,15 +178,15 @@ export default function ContactForm() {
                     name="contact"
                     render={({ field }) => (
                       <FormItem className="space-y-2">
-                        <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
-                          <Phone size={16} className="text-[#8b949e]" />
+                        <FormLabel className="text-[#ebdbb2] font-medium flex items-center gap-2 text-sm">
+                          <Phone size={16} className="text-[#a89984]" />
                           Contact Number
                         </FormLabel>
                         <FormControl>
                           <Input
                             placeholder="98xxxxxxxx"
                             {...field}
-                            className="h-10 border-[#30363d] focus:border-[#58a6ff] rounded-md transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
+                            className="h-10 border-[#3a3128] focus:border-[#1793d1] focus:shadow-[0_0_0_3px_rgba(23,147,209,0.15)] rounded-md transition-all duration-200 bg-[#1b1712] hover:bg-[#221d17] focus:bg-[#1b1712] text-[#ebdbb2] placeholder-[#a89984]"
                           />
                         </FormControl>
                         <FormMessage className="text-[#f85149]" />
@@ -197,21 +197,67 @@ export default function ContactForm() {
 
                 <FormField
                   control={form.control}
+                  name="task"
+                  render={({ field }) => (
+                    <FormItem className="space-y-2">
+                      <FormLabel className="text-[#ebdbb2] font-medium flex items-center gap-2 text-sm">
+                        <Briefcase size={16} className="text-[#a89984]" />
+                        Service Needed
+                      </FormLabel>
+                      <FormControl>
+                        <select
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e);
+                            const svc = taskData.tasks.find((t) => t.id === e.target.value);
+                            setTotalAmount(svc?.price ?? 0);
+                          }}
+                          className="h-10 w-full px-3 border-[#3a3128] focus:border-[#1793d1] rounded-md transition-all duration-200 bg-[#1b1712] hover:bg-[#221d17] focus:bg-[#1b1712] text-[#ebdbb2] text-sm focus:outline-none"
+                        >
+                          <option value="">Select a service (optional)</option>
+                          {taskData.tasks.map((t) => (
+                            <option key={t.id} value={t.id}>
+                              {t.name} — Rs. {t.price.toLocaleString()}
+                            </option>
+                          ))}
+                        </select>
+                      </FormControl>
+                      {totalAmount > 0 && (
+                        <p className="text-xs text-[#a89984]">
+                          Estimated starting price:{" "}
+                          <span className="text-[#1793d1] font-semibold">
+                            Rs. {totalAmount.toLocaleString()}
+                          </span>
+                        </p>
+                      )}
+                      <FormMessage className="text-[#f85149]" />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
                   name="message"
                   render={({ field }) => (
                     <FormItem className="space-y-2">
-                      <FormLabel className="text-[#c9d1d9] font-medium flex items-center gap-2 text-sm">
-                        <MessageCircle size={16} className="text-[#8b949e]" />
+                      <FormLabel className="text-[#ebdbb2] font-medium flex items-center gap-2 text-sm">
+                        <MessageCircle size={16} className="text-[#a89984]" />
                         Project Details
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Tell me about your project, goals, timeline, and any specific requirements you have in mind..."
-                          className="min-h-[120px] border-[#30363d] focus:border-[#58a6ff] rounded-md resize-none transition-all duration-200 bg-[#0d1117] hover:bg-[#161b22] focus:bg-[#0d1117] text-[#c9d1d9] placeholder-[#8b949e]"
+                          maxLength={1000}
+                          className="min-h-[120px] border-[#3a3128] focus:border-[#1793d1] focus:shadow-[0_0_0_3px_rgba(23,147,209,0.15)] rounded-md resize-none transition-all duration-200 bg-[#1b1712] hover:bg-[#221d17] focus:bg-[#1b1712] text-[#ebdbb2] placeholder-[#a89984]"
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-[#f85149]" />
+                      <div className="flex items-center justify-between">
+                        <FormMessage className="text-[#f85149]" />
+                        <span className="ml-auto font-mono text-xs text-[#5c5040]">
+                          {field.value?.length ?? 0}/1000
+                        </span>
+                      </div>
                     </FormItem>
                   )}
                 />
@@ -242,7 +288,7 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="text-center mt-6 text-[#8b949e] text-sm">
+        <div className="text-center mt-6 text-[#a89984] text-sm">
           <p>I typically respond within 24 hours</p>
         </div>
       </div>

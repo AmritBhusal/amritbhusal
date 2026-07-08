@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import portfolioData from '@/components/Portfolio/portfolio.json';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const siteUrl = 'https://amritbhusal1.com.np';
     const currentDate = new Date().toISOString();

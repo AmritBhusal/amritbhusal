@@ -33,7 +33,7 @@ const LoginForm = () => {
     };
 
     return (
-        <div className="border border-[#30363d] rounded-xl bg-[#161b22] overflow-hidden">
+        <div className="border border-[#3a3128] rounded-xl bg-[#221d17] overflow-hidden">
             <form onSubmit={handleSubmit} className="p-6 space-y-5">
                 {error && (
                     <div className="flex items-center gap-2 px-4 py-3 bg-[#f85149]/10 border border-[#f85149]/20 rounded-lg text-sm text-[#f85149]">
@@ -43,36 +43,36 @@ const LoginForm = () => {
                 )}
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#e6edf3]">Email address</label>
+                    <label className="text-sm font-medium text-[#fbf1c7]">Email address</label>
                     <div className="relative">
-                        <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#484f58]" />
+                        <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#7c6f5a]" />
                         <input
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="admin@admin.com"
                             required
-                            className="w-full pl-10 pr-4 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                            className="w-full pl-10 pr-4 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                         />
                     </div>
                 </div>
 
                 <div className="space-y-2">
-                    <label className="text-sm font-medium text-[#e6edf3]">Password</label>
+                    <label className="text-sm font-medium text-[#fbf1c7]">Password</label>
                     <div className="relative">
-                        <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#484f58]" />
+                        <Lock size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#7c6f5a]" />
                         <input
                             type={showPassword ? 'text' : 'password'}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="••••••••"
                             required
-                            className="w-full pl-10 pr-11 py-2.5 bg-[#0d1117] border border-[#21262d] rounded-lg text-[#e6edf3] text-sm placeholder-[#484f58] focus:outline-none focus:border-[#58a6ff] focus:ring-1 focus:ring-[#58a6ff]/20 transition-all"
+                            className="w-full pl-10 pr-11 py-2.5 bg-[#1b1712] border border-[#2b241b] rounded-lg text-[#fbf1c7] text-sm placeholder-[#7c6f5a] focus:outline-none focus:border-[#1793d1] focus:ring-1 focus:ring-[#1793d1]/20 transition-all"
                         />
                         <button
                             type="button"
                             onClick={() => setShowPassword(prev => !prev)}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-[#484f58] hover:text-[#8b949e] transition-colors"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-[#7c6f5a] hover:text-[#a89984] transition-colors"
                         >
                             {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
                         </button>
@@ -100,25 +100,25 @@ const LoginForm = () => {
 
 const LoginPage = () => {
     return (
-        <div className="min-h-screen bg-[#0d1117] flex items-center justify-center px-4">
+        <div className="min-h-screen bg-[#1b1712] flex items-center justify-center px-4">
             <div className="w-full max-w-md">
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#238636] to-[#2ea043] mb-4 shadow-lg shadow-[#238636]/20">
                         <FolderKanban size={28} className="text-white" />
                     </div>
-                    <h1 className="text-2xl font-bold text-[#e6edf3]">Portfolio Admin</h1>
-                    <p className="text-sm text-[#8b949e] mt-1">Sign in to manage your projects</p>
+                    <h1 className="text-2xl font-bold text-[#fbf1c7]">Portfolio Admin</h1>
+                    <p className="text-sm text-[#a89984] mt-1">Sign in to manage your projects</p>
                 </div>
 
                 <Suspense fallback={
-                    <div className="border border-[#30363d] rounded-xl bg-[#161b22] p-6 text-center text-[#8b949e] text-sm">
+                    <div className="border border-[#3a3128] rounded-xl bg-[#221d17] p-6 text-center text-[#a89984] text-sm">
                         Loading...
                     </div>
                 }>
                     <LoginForm />
                 </Suspense>
 
-                <p className="text-center text-xs text-[#484f58] mt-6">
+                <p className="text-center text-xs text-[#7c6f5a] mt-6">
                     Protected admin area • Portfolio Management
                 </p>
             </div>

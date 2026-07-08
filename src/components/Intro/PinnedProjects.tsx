@@ -49,10 +49,10 @@ const PinnedProjects = () => {
         <>
             <div>
                 <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-[16px] font-semibold text-[#c9d1d9]">Pinned</h2>
+                    <h2 className="text-[16px] font-semibold text-[#ebdbb2]">Pinned</h2>
                     <button
                         onClick={handleOpenPinDialog}
-                        className="text-xs text-[#58a6ff] cursor-pointer hover:underline flex items-center gap-1"
+                        className="text-xs text-[#1793d1] cursor-pointer hover:underline flex items-center gap-1"
                     >
                         <Pin size={12} />
                         Customize your pins
@@ -61,18 +61,18 @@ const PinnedProjects = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {pinnedProjects.map((project) => (
-                        <Link href={`/detail/${project.id}`} key={project.id} className="border border-[#30363d] rounded-md p-4 bg-[#0d1117] flex flex-col gap-2 hover:border-[#8b949e] transition-colors">
-                            <div className="flex items-center gap-2 text-[#58a6ff] font-semibold">
-                                <Book size={16} className="text-[#8b949e]" />
+                        <Link href={`/detail/${project.id}`} key={project.id} className="border border-[#3a3128] rounded-md p-4 bg-[#1b1712] flex flex-col gap-2 hover:border-[#a89984] transition-colors">
+                            <div className="flex items-center gap-2 text-[#1793d1] font-semibold">
+                                <Book size={16} className="text-[#a89984]" />
                                 <span className="hover:underline">
                                     {project.name.toLowerCase().replace(/\s+/g, '-').substring(0, 25)}
                                 </span>
-                                <span className="border border-[#30363d] rounded-full px-2 text-[10px] text-[#8b949e] font-medium">
+                                <span className="border border-[#3a3128] rounded-full px-2 text-[10px] text-[#a89984] font-medium">
                                     {project.type === 'client' ? 'Private' : 'Public'}
                                 </span>
                             </div>
-                            <p className="text-xs text-[#8b949e] line-clamp-2">{project.details}</p>
-                            <div className="flex items-center gap-4 mt-auto pt-2 text-xs text-[#8b949e]">
+                            <p className="text-xs text-[#a89984] line-clamp-2">{project.details}</p>
+                            <div className="flex items-center gap-4 mt-auto pt-2 text-xs text-[#a89984]">
                                 <div className="flex items-center gap-1">
                                     <span className="w-3 h-3 rounded-full" style={{ backgroundColor: getLanguageColor(project) }}></span>
                                     {getLanguageName(project)}
