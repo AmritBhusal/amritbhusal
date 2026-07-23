@@ -122,3 +122,68 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
+
+/* Rendered Markdown for blog posts — terminal/gruvbox flavoured */
+.prose-blog {
+  color: #d5c4a1;
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.prose-blog > * + * { margin-top: 1.15rem; }
+.prose-blog h2 {
+  color: #fbf1c7;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 2.25rem;
+  scroll-margin-top: 5rem;
+}
+.prose-blog h3 {
+  color: #fbf1c7;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 1.75rem;
+  scroll-margin-top: 5rem;
+}
+.prose-blog a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-blog strong { color: #fbf1c7; }
+.prose-blog ul, .prose-blog ol { padding-left: 1.4rem; }
+.prose-blog ul { list-style: disc; }
+.prose-blog ol { list-style: decimal; }
+.prose-blog li { margin-top: 0.4rem; }
+.prose-blog blockquote {
+  border-left: 3px solid hsl(var(--primary));
+  padding-left: 1rem;
+  color: #a89984;
+  font-style: italic;
+}
+.prose-blog code {
+  font-family: var(--font-mono), monospace;
+  background: #1b1712;
+  border: 1px solid #3a3128;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+  color: #fabd2f;
+}
+.prose-blog pre {
+  background: #1b1712;
+  border: 1px solid #3a3128;
+  border-radius: 0.6rem;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+}
+.prose-blog pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #ebdbb2;
+  font-size: 0.85rem;
+}
+.prose-blog img {
+  border-radius: 0.6rem;
+  border: 1px solid #3a3128;
+}
