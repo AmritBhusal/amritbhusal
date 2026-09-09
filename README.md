@@ -11,7 +11,7 @@
 
 I'm a passionate **Frontend Engineer** with Knowledge in **Web3 technologies** and **Blockchain development**. I love building intuitive, responsive user interfaces and decentralized applications that solve real-world problems.
 
-- 🔭 Currently working as **Freelancer**.
+- 🔭 Currently working at **Togglecorp Solutions**.
 - 🌱 Expanding my skills in **React** and **React Native**
 - 💼 Over 3 years of experience in web development
 - 🏆 Committed to writing clean, maintainable, and efficient code
@@ -84,13 +84,6 @@ A business-to-business platform facilitating efficient transactions and communic
 **Tech Stack:** Html, Css, Tailwind CSS, Laravel
 
 *Check out more projects on my [portfolio](https://amritbhusal1.com.np/)*
-
-## 📈 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=amritbhusal&show_icons=true&theme=radical" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=amritbhusal&layout=compact&theme=radical" alt="Top Languages" />
-</p>
 
 ## 📞 Let's Connect!
 
