@@ -1,0 +1,51 @@
+[
+  {
+    "file": "performance-optimization.md",
+    "order": 8,
+    "category": "Performance",
+    "tags": ["Web Vitals", "DevTools", "Optimization"]
+  },
+  {
+    "file": "frontend-security-things-we-get-wrong.md",
+    "slug": "frontend-security-things-we-get-wrong",
+    "order": 7,
+    "category": "Security",
+    "tags": ["XSS", "CSP", "Frontend"]
+  },
+  {
+    "file": "monorepo-vs-submodule.md",
+    "order": 6,
+    "category": "Engineering",
+    "tags": ["Git", "Monorepo", "Tooling"]
+  },
+  {
+    "file": "claude-code-engineering-skills-guide.md",
+    "order": 5,
+    "category": "Tooling",
+    "tags": ["Claude Code", "AI", "Workflow"]
+  },
+  {
+    "file": "setting-up-private-blockchain-network-using-geth.md",
+    "order": 4,
+    "category": "Blockchain",
+    "tags": ["Geth", "Ethereum", "DevOps"]
+  },
+  {
+    "file": "tags-releases-and-branches-frontend-deployment.md",
+    "order": 3,
+    "category": "Engineering",
+    "tags": ["Git", "Release", "Deployment"]
+  },
+  {
+    "file": "cybersource-vs-other-international-payment-gateways.md",
+    "order": 2,
+    "category": "Payments",
+    "tags": ["CyberSource", "Stripe", "Gateways"]
+  },
+  {
+    "file": "nextjs-go-to-framework-2025.md",
+    "order": 1,
+    "category": "Development",
+    "tags": ["Next.js", "React", "SSR"]
+  }
+]
